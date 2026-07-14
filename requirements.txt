@@ -1,0 +1,8 @@
+# Embedding and ML
+sentence-transformers
+torch
+
+# Configuration Management
+pydantic
+pydantic-settings
+python-dotenv

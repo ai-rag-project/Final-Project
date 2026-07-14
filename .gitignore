@@ -1,0 +1,25 @@
+# Environments & Secrets
+.venv/
+env/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Vector DB & Local Storage (در صورتی که فایل‌های دیتابیس را لوکال می‌سازی)
+*.sqlite3
+*.db
+chroma/
+faiss_index/
+
+# IDEs & Editors
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
