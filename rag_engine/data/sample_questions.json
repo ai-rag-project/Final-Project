@@ -1,0 +1,928 @@
+[
+  {
+    "id": "5a2eca47a83784001a7d2485",
+    "context_id": 45,
+    "question": "In what month was Drancourt and Raoult's research published in 1998?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a667f50846392001a1e1c68",
+    "context_id": 4,
+    "question": "What did Lawrence Roberts suggest the system be used for?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5728501aff5b5019007da168",
+    "context_id": 14,
+    "question": "How many Vice Presidents are in the Board of Trustees?",
+    "answers": [
+      "fourteen",
+      "fourteen",
+      "fourteen"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad262aad7d075001a4290c3",
+    "context_id": 41,
+    "question": "Why does unemployment help growth?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "572fffb1b2c2fd14005686fd",
+    "context_id": 22,
+    "question": "What did Iqbal's Allahabad address inspire?",
+    "answers": [
+      "Pakistan movement",
+      "the Pakistan movement",
+      "Pakistan movement"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad25d49d7d075001a428ef0",
+    "context_id": 17,
+    "question": "In what year did the French Huguenots abandon their first North American outpost?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a0c6698f5590b0018dab3e6",
+    "context_id": 23,
+    "question": "201,000,000 sq mi of rainforest cover what?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "57302bd0b2c2fd14005689db",
+    "context_id": 35,
+    "question": "What type of group is The Islamic State?",
+    "answers": [
+      "Wahhabi/Salafi jihadist extremist militant",
+      "Wahhabi/Salafi jihadist extremist militant group",
+      "extremist militant"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad2772cd7d075001a429540",
+    "context_id": 34,
+    "question": "What is now described by the Newtonian equations?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a823e6f31013a001a33532d",
+    "context_id": 51,
+    "question": "What event was won by Yale in 1920?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad03aa977cf76001a686e8a",
+    "context_id": 26,
+    "question": "Public Bill Committees have been set up to do what?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5728705c2ca10214002da35b",
+    "context_id": 19,
+    "question": "What was the civil war against Ragibagh also called?",
+    "answers": [
+      "the War of the Two Capitals",
+      "War of the Two Capitals",
+      "the War of the Two Capitals"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a551230134fea001a0e18ce",
+    "context_id": 54,
+    "question": "What sort of protocols were developed? ",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5710eb6fb654c5140001fa18",
+    "context_id": 17,
+    "question": "What present-day area was this settlement near?",
+    "answers": [
+      "Parris Island",
+      "Southeastern U.S.",
+      "Parris Island"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "56e1c7e2cd28a01900c67b74",
+    "context_id": 29,
+    "question": "What is the foundation for separation results within complexity classes?",
+    "answers": [
+      "time and space hierarchy theorems",
+      "The time and space hierarchy theorems",
+      "time and space hierarchy theorems"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "57264e66dd62a815002e811c",
+    "context_id": 52,
+    "question": "What does pumping water into the mesoglea do?",
+    "answers": [
+      "increase its bulk and decrease its density",
+      "increase its bulk and decrease its density",
+      "increase its bulk and decrease its density"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572949306aef051400154c6b",
+    "context_id": 47,
+    "question": "When was the Third Assessment Report published?",
+    "answers": [
+      "2001",
+      "2001",
+      "2001"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572f5703a23a5019007fc575",
+    "context_id": 46,
+    "question": "What is the alpine valley that the Rhine flows through?",
+    "answers": [
+      "Rhine Valley",
+      "Rhine Valley",
+      "Rhine Valley",
+      "Rhine Valley",
+      "Rhine Valley"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572fc8a904bcaa1900d76d22",
+    "context_id": 26,
+    "question": "What kind of committee considered legislation on the development of the Edinburgh Tram Network?",
+    "answers": [
+      "Private Bill",
+      "Private Bill",
+      "Private Bill Committees"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "571a484210f8ca1400304fc0",
+    "context_id": 39,
+    "question": "How many atoms combine to form dioxygen?",
+    "answers": [
+      "two atoms",
+      "two",
+      "two",
+      "two",
+      "two"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "57302bd0b2c2fd14005689dc",
+    "context_id": 35,
+    "question": "Who leads The Islamic State?",
+    "answers": [
+      "Sunni Arabs",
+      "Sunni Arabs",
+      "Sunni Arabs"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a668d25f038b7001ab0bfad",
+    "context_id": 54,
+    "question": "Originally built with four layers, how many layers did DEC evolve to have?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5726378238643c19005ad313",
+    "context_id": 4,
+    "question": "Who developed the same technology as Baran ",
+    "answers": [
+      "Donald Davies",
+      "Donald Davies",
+      "Donald Davies"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad3b147604f3c001a3fecd8",
+    "context_id": 49,
+    "question": "How did King Louis X respond to British plans?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a665870846392001a1e1af6",
+    "context_id": 48,
+    "question": "What did Ghandi think that using your conscience accomplished?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a823e6f31013a001a33532f",
+    "context_id": 51,
+    "question": "How did Yale introduce a new era in football?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad41813604f3c001a4003e1",
+    "context_id": 10,
+    "question": "What was the average duty of a concept engine?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a3e4a34378766001a002552",
+    "context_id": 47,
+    "question": "Which study suggests that previous estimates were overstated?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "57263ea0271a42140099d7c3",
+    "context_id": 54,
+    "question": "What is  DECnet",
+    "answers": [
+      "a suite of network protocols created by Digital Equipment Corporation",
+      "a suite of network protocols created by Digital Equipment Corporation",
+      "suite of network protocols created by Digital Equipment Corporation"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad49c34ba00c4001a268d9d",
+    "context_id": 25,
+    "question": "What is the immune system of the stomach known as?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad3b373604f3c001a3fed49",
+    "context_id": 37,
+    "question": "Who was Old France's governor?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "572a0ecb1d04691400779719",
+    "context_id": 41,
+    "question": "What was persistent unemployment have a negative effect on?",
+    "answers": [
+      "subsequent long-run economic growth",
+      "subsequent long-run economic growth",
+      "long-run economic growth"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "571156152419e3140095559e",
+    "context_id": 10,
+    "question": "What was the ideal duty of a Newcomen engine?",
+    "answers": [
+      "7 million",
+      "7 million",
+      "7 million"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a667f50846392001a1e1c6b",
+    "context_id": 4,
+    "question": "What did Baran call his message routing methodology?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a0c7cb3f5590b0018dab428",
+    "context_id": 11,
+    "question": "Terra preta is distributor over a small area of what?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5728e07e3acd2414000e00eb",
+    "context_id": 48,
+    "question": "What is the goal of individual civil disobedience?",
+    "answers": [
+      "render certain laws ineffective",
+      "to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue",
+      "render certain laws ineffective, to cause their repeal",
+      "t to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue",
+      "to render certain laws ineffective,"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad5071f5b96ef001a10aa38",
+    "context_id": 44,
+    "question": "What is Polish for \"female\"?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5728202c4b864d19001644f0",
+    "context_id": 48,
+    "question": "What other topics can Civil disobedience pertain to?",
+    "answers": [
+      "cultural traditions, social customs, religious beliefs",
+      "revolutionary civil disobedience",
+      "change cultural traditions, social customs, religious beliefs, etc",
+      "cultural traditions, social customs, religious beliefs",
+      "peaceable revolution"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5727db85ff5b5019007d96fd",
+    "context_id": 51,
+    "question": "In what year did Harvard Stadium become the first ever concrete reinforced stadium in the country?",
+    "answers": [
+      "1903",
+      "1903",
+      "1903"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad262aad7d075001a4290c4",
+    "context_id": 41,
+    "question": "Policies which try to control unemployment support economic growth because they increase what?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "572fce13a23a5019007fca13",
+    "context_id": 40,
+    "question": "What do statements from the PO and member in charge of the bill also indicate?",
+    "answers": [
+      "whether the bill is within the legislative competence of the Parliament",
+      "whether the bill is within the legislative competence of the Parliament",
+      "whether the bill is within the legislative competence of the Parliament"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5729e2316aef0514001550c8",
+    "context_id": 23,
+    "question": "What is the estimate for the amount of tree species in the amazon tropical rain forest?",
+    "answers": [
+      "16,000 species",
+      "16,000",
+      "16,000"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "571156152419e3140095559b",
+    "context_id": 10,
+    "question": "How was the efficiency of a steam engine typically evaluated?",
+    "answers": [
+      "duty",
+      "duty"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572fe41e04bcaa1900d76e4b",
+    "context_id": 46,
+    "question": "Where does the Rhine make a distinctive turn to the north? ",
+    "answers": [
+      "Chur",
+      "Chur",
+      "Chur",
+      "Chur"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad4e56d5b96ef001a10a59c",
+    "context_id": 9,
+    "question": "What happens when the immune system loses tolerance for tumor antigens?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5725d42a89a1e219009abf5c",
+    "context_id": 32,
+    "question": "Who was Bill Aiken's adopted mother?",
+    "answers": [
+      "Lupe Mayorga",
+      "Lupe Mayorga",
+      "Lupe Mayorga"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "57293c246aef051400154bb8",
+    "context_id": 2,
+    "question": "Who is on the IPCC Panel?",
+    "answers": [
+      "representatives appointed by governments and organizations",
+      "representatives appointed by governments and organizations",
+      "representatives appointed by governments and organizations"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a666b43846392001a1e1c12",
+    "context_id": 36,
+    "question": "What court case was eventually the result of Joseph Haas sending and e-mail to the New Hampshire city council?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a3e2dc0378766001a0024c5",
+    "context_id": 2,
+    "question": "What year did more than 375 officials attend the IPCC Bureau session?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a605b5ee9e1cc001a33cd41",
+    "context_id": 4,
+    "question": "Did Davies develop his concept with the intention of monetizing it?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad4db615b96ef001a10a434",
+    "context_id": 43,
+    "question": "What disorder causes the immune system to distinguish between self and non-self?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a6787d4f038b7001ab0c27b",
+    "context_id": 7,
+    "question": "What kind of taxation funds private schools?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad40c2d604f3c001a40004b",
+    "context_id": 0,
+    "question": "Who were the Samuron?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a0c7cb3f5590b0018dab42c",
+    "context_id": 11,
+    "question": "The poor soil found over much of the Amazon force is a result of what?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad40c2d604f3c001a400049",
+    "context_id": 0,
+    "question": "What Mongolian system did Kublai's government uncompromise with?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad03efa77cf76001a686edf",
+    "context_id": 40,
+    "question": "What is submitted to only part of Parliament for a full debate?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5710eb6fb654c5140001fa1a",
+    "context_id": 17,
+    "question": "When did Ribault first establish a settlement in South Carolina?",
+    "answers": [
+      "1562",
+      "1562",
+      "1564"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "56e1c720e3433e140042316b",
+    "context_id": 12,
+    "question": "In what expression can one expect to find DTIME(n)",
+    "answers": [
+      "DTIME(n2)",
+      "DTIME(n2)",
+      "DTIME(n2)"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5728284e3acd2414000df5d1",
+    "context_id": 36,
+    "question": "What year did the the case go before the supreme court?",
+    "answers": [
+      "1978",
+      "1978",
+      "1978",
+      "1978",
+      "1978"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad3ed26604f3c001a3ff79c",
+    "context_id": 21,
+    "question": "How many men did Roberts army face?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a6787d4f038b7001ab0c27d",
+    "context_id": 7,
+    "question": "What are two reasons a student would be able to get a scholarship for a public school?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5729f4b41d0469140077968d",
+    "context_id": 53,
+    "question": "The receptors on a killer T cell must bind to how many MHC: antigen complexes in order to activate the cell?",
+    "answers": [
+      "a single MHC:antigen molecule",
+      "single",
+      "a single MHC:antigen molecule"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad4d2d65b96ef001a10a1f8",
+    "context_id": 53,
+    "question": "What antigens do Helper T cells not recognize?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5710eb6fb654c5140001fa17",
+    "context_id": 17,
+    "question": "What was the name of the first Huguenot outpost in South Carolina?",
+    "answers": [
+      "Charlesfort",
+      "Charlesfort",
+      "Charlesfort"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a8919843b2508001a72a4bc",
+    "context_id": 16,
+    "question": "What number did Henri Lebesgue not regard as a true number?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "57377aac1c4567190057447a",
+    "context_id": 34,
+    "question": "What equation desribed the physics of force before the current Schrodinger equation?",
+    "answers": [
+      "Newtonian",
+      "Newtonian equations",
+      "Newtonian equations.",
+      "Newtonian",
+      "Newtonian equations"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad2772cd7d075001a429541",
+    "context_id": 34,
+    "question": "What used to be described by the Schrodinger equation?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5acfe91c77cf76001a686436",
+    "context_id": 22,
+    "question": "What did Iqbal fear would strengthen the spiritual foundations of Islam and Muslim society?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5728284e3acd2414000df5cd",
+    "context_id": 36,
+    "question": "What was Joseph Haas arrested for?",
+    "answers": [
+      "sending an email to the Lebanon, New Hampshire city councilors",
+      "sending an email",
+      "sending an email to the Lebanon, New Hampshire city councilors",
+      "sending an email",
+      "sending an email to the Lebanon"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad561c85b96ef001a10ad3d",
+    "context_id": 12,
+    "question": "What does not define a bigger set of problems?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "571a484210f8ca1400304fc1",
+    "context_id": 39,
+    "question": "Roughly, how much oxygen makes up the Earth crust?",
+    "answers": [
+      "almost half",
+      "almost half",
+      "half",
+      "almost half",
+      "half"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a8943753b2508001a72a570",
+    "context_id": 6,
+    "question": "What type of insect employs the use of Magicicadas in its evolutionary strategy?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5710eb6fb654c5140001fa19",
+    "context_id": 17,
+    "question": "Which Spanish officer established the settlement at St. Augustine?",
+    "answers": [
+      "Pedro Menéndez de Avilés",
+      "Pedro Menéndez de Avilés",
+      "Pedro Menéndez de Avilés"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad02f5777cf76001a686d85",
+    "context_id": 55,
+    "question": " When didn't the term imperialism first come to be used by its current definition?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "572900f73f37b31900477f6b",
+    "context_id": 8,
+    "question": "What compounds are released by injured or infected cells, triggering inflammation?",
+    "answers": [
+      "eicosanoids and cytokines",
+      "eicosanoids and cytokines",
+      "eicosanoids"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "57302bd0b2c2fd14005689de",
+    "context_id": 35,
+    "question": "How many people did the Islamic State control the territory of as of March 2015?",
+    "answers": [
+      "ten million",
+      "ten million",
+      "ten million"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a7b079b21c2de001afe9cf8",
+    "context_id": 32,
+    "question": "Who owned the WWVA Jamboree?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "57264e2f708984140094c1e3",
+    "context_id": 45,
+    "question": "How did scientists assess the DNA/RNA of yersinia pestis? ",
+    "answers": [
+      "with Polymerase Chain Reaction (PCR)",
+      "Polymerase Chain Reaction (PCR) techniques",
+      "Polymerase Chain Reaction (PCR) techniques"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5ad043a977cf76001a686f37",
+    "context_id": 50,
+    "question": "What is subtracted to its constituency seats?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad262aad7d075001a4290c1",
+    "context_id": 41,
+    "question": "What does decreasing inequality harm?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad3fabc604f3c001a3ffb1f",
+    "context_id": 42,
+    "question": "Where were non-condensing direct-drive locomotives notably used for fast passenger ships?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5733f410d058e614000b6663",
+    "context_id": 49,
+    "question": "What was the goal of Braddock's expedition?",
+    "answers": [
+      "dislodge the French",
+      "dislodge the French",
+      "dislodge the French",
+      "dislodge the French"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5725b81b271a42140099d097",
+    "context_id": 23,
+    "question": "Which name is also used to describe the Amazon rainforest in English?",
+    "answers": [
+      "also known in English as Amazonia or the Amazon Jungle,",
+      "Amazonia or the Amazon Jungle",
+      "Amazonia"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "57264e66dd62a815002e811a",
+    "context_id": 52,
+    "question": "How do ctenophores control buoyancy?",
+    "answers": [
+      "osmotic pressure",
+      "It is uncertain",
+      "rely on osmotic pressure"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5737a5931c456719005744e8",
+    "context_id": 15,
+    "question": "How do centripetal forces act in relation to vectors of velocity?",
+    "answers": [
+      "perpendicular",
+      "perpendicular",
+      "perpendicular",
+      "perpendicular"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5725cf3238643c19005acd61",
+    "context_id": 11,
+    "question": "What is terra preta called?",
+    "answers": [
+      "black earth",
+      "black earth",
+      "black earth"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5728e07e3acd2414000e00e9",
+    "context_id": 48,
+    "question": "What is a simple form of civil disobedience?",
+    "answers": [
+      "disobedience of laws",
+      "Non-revolutionary civil disobedience",
+      "Non-revolutionary civil disobedience",
+      "Non-revolutionary",
+      "cultural revolution"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5733d249d058e614000b6333",
+    "context_id": 24,
+    "question": "Where was France concentraing efforts?",
+    "answers": [
+      "against Prussia and its allies in the European theatre of the war.",
+      "Prussia",
+      "against Prussia and its allies",
+      "European theatre",
+      "Prussia"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a551230134fea001a0e18cf",
+    "context_id": 54,
+    "question": "What does DECnet suite include?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "57377aac1c4567190057447c",
+    "context_id": 34,
+    "question": "What type of measurements result under Schrodinger equations when using operators instead of Newtonian variables?",
+    "answers": [
+      "quantized",
+      "operators",
+      "quantized",
+      "quantized",
+      "quantized"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5729e2316aef0514001550c6",
+    "context_id": 23,
+    "question": "How many nations are within the Amazon Basin?",
+    "answers": [
+      "nine nations",
+      "nine",
+      "nine"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572a1ba46aef05140015528f",
+    "context_id": 13,
+    "question": "How is unregistered property held in informal form?",
+    "answers": [
+      "through various associations and other arrangements",
+      "through various associations and other arrangements",
+      "through various associations"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "572fe41e04bcaa1900d76e4f",
+    "context_id": 46,
+    "question": "The Rhine forms the border between Austria and what other country? ",
+    "answers": [
+      "Switzerland",
+      "Switzerland",
+      "Liechtenstein",
+      "Switzerland",
+      "Switzerland"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5a3e2dc0378766001a0024c4",
+    "context_id": 2,
+    "question": "Which IPCC sessions are open to everyone?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "572a0b0b6aef0514001551f6",
+    "context_id": 9,
+    "question": "Tumors that are able to evade the body's immune response can become what?",
+    "answers": [
+      "cancers",
+      "cancers",
+      "cancers"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5706139252bb891400689867",
+    "context_id": 20,
+    "question": "How many campuses does the University of California have?",
+    "answers": [
+      "5",
+      "5",
+      "5"
+    ],
+    "is_answerable": true
+  },
+  {
+    "id": "5acfeee177cf76001a686570",
+    "context_id": 35,
+    "question": "What type of group is The non-Islamic State?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a3e4a34378766001a002551",
+    "context_id": 47,
+    "question": "Who projected the 1990 levels in the third assessment report?",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5ad405f0604f3c001a3ffe2d",
+    "context_id": 19,
+    "question": "How did Yesun Temur die",
+    "answers": [],
+    "is_answerable": false
+  },
+  {
+    "id": "5a0c7cb3f5590b0018dab429",
+    "context_id": 11,
+    "question": "What is a product of foreign soil management?",
+    "answers": [],
+    "is_answerable": false
+  }
+]
