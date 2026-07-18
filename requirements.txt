@@ -1,6 +1,10 @@
 # Embedding and ML
 sentence-transformers
 torch
+chromadb
+scikit-learn 
+plotly 
+pandas
 
 # Configuration Management
 pydantic
