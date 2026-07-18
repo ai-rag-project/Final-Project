@@ -6,7 +6,6 @@ class RagSettings(BaseSettings):
     
     # Embeding 
     EMBEDDING_MODEL_NAME: str = "BAAI/bge-base-en-v1.5"
-    EMBEDDING_DIMENSION: int = 768
     
     class Config:
         env_file = ".env"
