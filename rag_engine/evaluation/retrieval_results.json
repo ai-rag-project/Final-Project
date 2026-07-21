@@ -1,7 +1,7 @@
 {
   "configuration": {
-    "questions_file": "C:\\Users\\Novin\\Desktop\\Final-Project\\rag_engine\\data\\sample_questions.json",
-    "chunks_file": "C:\\Users\\Novin\\Desktop\\Final-Project\\rag_engine\\data\\sample_chunks.json",
+    "questions_file": "rag_engine/data/sample_questions.json",
+    "chunks_file": "rag_engine/data/sample_chunks.json",
     "collection": "rag_evaluation",
     "top_k": 3,
     "answerable_only": true
