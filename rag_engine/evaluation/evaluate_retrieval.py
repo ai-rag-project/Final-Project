@@ -25,6 +25,15 @@ DEFAULT_OUTPUT = Path(__file__).resolve().parent / "retrieval_results.json"
 DEFAULT_CHROMA_DIR = REPO_ROOT / "chroma_db"
 
 
+def repository_relative_path(path: Path) -> str:
+    resolved_path = path.resolve()
+
+    try:
+        return resolved_path.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return resolved_path.as_posix()
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Measure retrieval recall on answerable SQuAD questions."
@@ -223,8 +232,8 @@ def main() -> None:
 
     result = {
         "configuration": {
-            "questions_file": str(args.questions),
-            "chunks_file": str(args.chunks),
+            "questions_file": repository_relative_path(args.questions),
+            "chunks_file": repository_relative_path(args.chunks),
             "collection": args.collection,
             "top_k": args.top_k,
             "answerable_only": True,
