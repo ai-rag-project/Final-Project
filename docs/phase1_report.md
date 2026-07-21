@@ -128,11 +128,11 @@ Evidence Recall@3 evaluates the retriever on answerable questions. A question
 is counted as successful when at least one normalized reference answer appears
 inside one of the three retrieved chunks.
 
-\[
+$$
 \text{Evidence Recall@3} =
 \frac{\text{questions with answer evidence in the Top-3 chunks}}
 {\text{all answerable questions}}
-\]
+$$
 
 This is stricter than checking only the source context ID. A retrieved chunk
 may come from the correct paragraph but still not contain the sentence with the
@@ -152,11 +152,11 @@ For the 50 unanswerable questions, returning `UNANSWERABLE` is considered a
 correct abstention. We will also calculate hallucination rate as a simple
 diagnostic:
 
-\[
+$$
 \text{Hallucination Rate} =
 \frac{\text{unanswerable questions given a normal answer}}
 {\text{all unanswerable questions}}
-\]
+$$
 
 ## 6. Simple Analysis Plan
 
