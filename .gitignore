@@ -15,6 +15,7 @@ __pycache__/
 *.db
 chroma/
 faiss_index/
+chroma_db/
 
 # IDEs & Editors
 .vscode/
@@ -23,3 +24,5 @@ faiss_index/
 # OS specific files
 .DS_Store
 Thumbs.db
+
+rag_engine/data/dev-v2.0.json

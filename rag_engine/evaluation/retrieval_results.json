@@ -1,0 +1,1862 @@
+{
+  "configuration": {
+    "questions_file": "rag_engine/data/sample_questions.json",
+    "chunks_file": "rag_engine/data/sample_chunks.json",
+    "collection": "rag_evaluation",
+    "top_k": 3,
+    "answerable_only": true
+  },
+  "metric_definitions": {
+    "context_recall": "A hit occurs when a retrieved chunk has the gold context_id.",
+    "evidence_recall": "A hit occurs when a normalized reference answer appears in a retrieved chunk. This is the primary retrieval metric."
+  },
+  "summary": {
+    "evaluated_questions": 50,
+    "top_k": 3,
+    "context_recall_at_1": 0.98,
+    "context_recall_at_3": 0.98,
+    "evidence_recall_at_1": 0.86,
+    "evidence_recall_at_3": 0.98,
+    "question_length_breakdown": {
+      "median_word_count": 9.0,
+      "short": {
+        "definition": "word_count <= 9.0",
+        "count": 29,
+        "evidence_recall_at_3": 0.9655172413793104
+      },
+      "long": {
+        "definition": "word_count > 9.0",
+        "count": 21,
+        "evidence_recall_at_3": 1.0
+      }
+    }
+  },
+  "questions": [
+    {
+      "question_id": "5728501aff5b5019007da168",
+      "question": "How many Vice Presidents are in the Board of Trustees?",
+      "question_word_count": 10,
+      "gold_context_id": 14,
+      "reference_answers": [
+        "fourteen",
+        "fourteen",
+        "fourteen"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "34",
+          "context_id": 14,
+          "distance": 0.291770339012146,
+          "text": "The University of Chicago is governed by a board of trustees. The Board of Trustees oversees the long-term development and plans of the university and manages fundraising efforts, and is composed of 50 members including the university President. Directly beneath the President are the Provost, fourteen Vice Presidents (including the Chief Financial Officer, Chief Investment Officer, and Dean of Students of the university), the Directors of Argonne National Laboratory and"
+        },
+        {
+          "rank": 2,
+          "id": "35",
+          "context_id": 14,
+          "distance": 0.4412690997123718,
+          "text": "Officer, and Dean of Students of the university), the Directors of Argonne National Laboratory and Fermilab, the Secretary of the university, and the Student Ombudsperson. As of August 2009[update], the Chairman of the Board of Trustees is Andrew Alper, and the President of the university is Robert Zimmer. In December 2013 it was announced that the Director of Argonne National Laboratory, Eric Isaacs, would become Provost. Isaacs was replaced as"
+        },
+        {
+          "rank": 3,
+          "id": "36",
+          "context_id": 14,
+          "distance": 0.5085102319717407,
+          "text": "the Director of Argonne National Laboratory, Eric Isaacs, would become Provost. Isaacs was replaced as Provost in March 2016 by Daniel Diermeier."
+        }
+      ]
+    },
+    {
+      "question_id": "572fffb1b2c2fd14005686fd",
+      "question": "What did Iqbal's Allahabad address inspire?",
+      "question_word_count": 6,
+      "gold_context_id": 22,
+      "reference_answers": [
+        "Pakistan movement",
+        "the Pakistan movement",
+        "Pakistan movement"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "61",
+          "context_id": 22,
+          "distance": 0.3161976933479309,
+          "text": "the shedding of nationalist differences. Sir Muhammad Iqbal was elected president of the Muslim League in 1930 at its session in Allahabad as well as for the session in Lahore in 1932. In his Allahabad Address on 29 December 1930, Iqbal outlined a vision of an independent state for Muslim-majority provinces in northwestern India. This address later inspired the Pakistan movement."
+        },
+        {
+          "rank": 2,
+          "id": "60",
+          "context_id": 22,
+          "distance": 0.4130247235298157,
+          "text": "Iqbal expressed fears that not only would secularism and secular nationalism weaken the spiritual foundations of Islam and Muslim society, but that India's Hindu-majority population would crowd out Muslim heritage, culture and political influence. In his travels to Egypt, Afghanistan, Palestine and Syria, he promoted ideas of greater Islamic political co-operation and unity, calling for the shedding of nationalist differences. Sir Muhammad Iqbal was elected president of the Muslim League"
+        },
+        {
+          "rank": 3,
+          "id": "91",
+          "context_id": 36,
+          "distance": 0.5185859203338623,
+          "text": "classic way of expressing defiance toward the government and unwillingness to stand for its policies. For example, Joseph Haas was arrested for allegedly sending an email to the Lebanon, New Hampshire city councilors stating, \"Wise up or die.\""
+        }
+      ]
+    },
+    {
+      "question_id": "57302bd0b2c2fd14005689db",
+      "question": "What type of group is The Islamic State?",
+      "question_word_count": 8,
+      "gold_context_id": 35,
+      "reference_answers": [
+        "Wahhabi/Salafi jihadist extremist militant",
+        "Wahhabi/Salafi jihadist extremist militant group",
+        "extremist militant"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "87",
+          "context_id": 35,
+          "distance": 0.22778791189193726,
+          "text": "\"The Islamic State\", formerly known as the \"Islamic State of Iraq and the Levant\" and before that as the \"Islamic State of Iraq\", (and called the acronym Daesh by its many detractors), is a Wahhabi/Salafi jihadist extremist militant group which is led by and mainly composed of Sunni Arabs from Iraq and Syria. In 2014, the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims"
+        },
+        {
+          "rank": 2,
+          "id": "88",
+          "context_id": 35,
+          "distance": 0.35792338848114014,
+          "text": "the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims worldwide. As of March 2015[update], it had control over territory occupied by ten million people in Iraq and Syria, and has nominal control over small areas of Libya, Nigeria and Afghanistan. (While a self-described state, it lacks international recognition.) The group also operates or has affiliates in other parts of the world, including North Africa"
+        },
+        {
+          "rank": 3,
+          "id": "99",
+          "context_id": 39,
+          "distance": 0.5533438324928284,
+          "text": "Oxygen is a chemical element with symbol O and atomic number 8. It is a member of the chalcogen group on the periodic table and is a highly reactive nonmetal and oxidizing agent that readily forms compounds (notably oxides) with most elements. By mass, oxygen is the third-most abundant element in the universe, after hydrogen and helium. At standard temperature and pressure, two atoms of the element bind to form"
+        }
+      ]
+    },
+    {
+      "question_id": "5728705c2ca10214002da35b",
+      "question": "What was the civil war against Ragibagh also called?",
+      "question_word_count": 9,
+      "gold_context_id": 19,
+      "reference_answers": [
+        "the War of the Two Capitals",
+        "War of the Two Capitals",
+        "the War of the Two Capitals"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "49",
+          "context_id": 19,
+          "distance": 0.4196416139602661,
+          "text": "and officers in Northern China and some other parts of the dynasty, Khanbaliq-based Tugh Temür eventually won the civil war against Ragibagh known as the War of the Two Capitals. Afterwards, Tugh Temür abdicated in favour of his brother Kusala, who was backed by Chagatai Khan Eljigidey, and announced Khanbaliq's intent to welcome him. However, Kusala suddenly died only four days after a banquet with Tugh Temür. He was supposedly"
+        },
+        {
+          "rank": 2,
+          "id": "122",
+          "context_id": 48,
+          "distance": 0.5154212713241577,
+          "text": "an active attempt to overthrow a government (or to change cultural traditions, social customs, religious beliefs, etc...revolution doesn't have to be political, i.e. \"cultural revolution\", it simply implies sweeping and widespread change to a section of the social fabric). Gandhi's acts have been described as revolutionary civil disobedience. It has been claimed that the Hungarians under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of"
+        },
+        {
+          "rank": 3,
+          "id": "48",
+          "context_id": 19,
+          "distance": 0.5187143683433533,
+          "text": "When Yesün Temür died in Shangdu in 1328, Tugh Temür was recalled to Khanbaliq by the Qipchaq commander El Temür. He was installed as the emperor (Emperor Wenzong) in Khanbaliq, while Yesün Temür's son Ragibagh succeeded to the throne in Shangdu with the support of Yesün Temür's favorite retainer Dawlat Shah. Gaining support from princes and officers in Northern China and some other parts of the dynasty, Khanbaliq-based Tugh Temür"
+        }
+      ]
+    },
+    {
+      "question_id": "5710eb6fb654c5140001fa18",
+      "question": "What present-day area was this settlement near?",
+      "question_word_count": 7,
+      "gold_context_id": 17,
+      "reference_answers": [
+        "Parris Island",
+        "Southeastern U.S.",
+        "Parris Island"
+      ],
+      "context_hit_rank": null,
+      "evidence_hit_rank": null,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "28",
+          "context_id": 11,
+          "distance": 0.4519041180610657,
+          "text": "human management, rather than naturally occurring as has previously been supposed. In the region of the Xingu tribe, remains of some of these large settlements in the middle of the Amazon forest were found in 2003 by Michael Heckenberger and colleagues of the University of Florida. Among those were evidence of roads, bridges and large plazas."
+        },
+        {
+          "rank": 2,
+          "id": "59",
+          "context_id": 21,
+          "distance": 0.4681704044342041,
+          "text": "merchants who had settled there. The Normans were now free to penetrate into the hinterland; they took Ioannina and some minor cities in southwestern Macedonia and Thessaly before appearing at the gates of Thessalonica. Dissension among the high ranks coerced the Normans to retreat to Italy. They lost Dyrrachium, Valona, and Butrint in 1085, after the death of Robert."
+        },
+        {
+          "rank": 3,
+          "id": "67",
+          "context_id": 24,
+          "distance": 0.48186028003692627,
+          "text": "and ultimately Quebec. Though the British were later defeated at Sainte Foy in Quebec, the French ceded Canada in accordance with the 1763 treaty."
+        }
+      ]
+    },
+    {
+      "question_id": "56e1c7e2cd28a01900c67b74",
+      "question": "What is the foundation for separation results within complexity classes?",
+      "question_word_count": 10,
+      "gold_context_id": 29,
+      "reference_answers": [
+        "time and space hierarchy theorems",
+        "The time and space hierarchy theorems",
+        "time and space hierarchy theorems"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "77",
+          "context_id": 29,
+          "distance": 0.27667462825775146,
+          "text": "The time and space hierarchy theorems form the basis for most separation results of complexity classes. For instance, the time hierarchy theorem tells us that P is strictly contained in EXPTIME, and the space hierarchy theorem tells us that L is strictly contained in PSPACE."
+        },
+        {
+          "rank": 2,
+          "id": "29",
+          "context_id": 12,
+          "distance": 0.3157387375831604,
+          "text": "For the complexity classes defined in this way, it is desirable to prove that relaxing the requirements on (say) computation time indeed defines a bigger set of problems. In particular, although DTIME(n) is contained in DTIME(n2), it would be interesting to know if the inclusion is strict. For time and space requirements, the answer to such questions is given by the time and space hierarchy theorems respectively. They are called"
+        },
+        {
+          "rank": 3,
+          "id": "30",
+          "context_id": 12,
+          "distance": 0.32839322090148926,
+          "text": "such questions is given by the time and space hierarchy theorems respectively. They are called hierarchy theorems because they induce a proper hierarchy on the classes defined by constraining the respective resources. Thus there are pairs of complexity classes such that one is properly included in the other. Having deduced such proper set inclusions, we can proceed to make quantitative statements about how much more additional time or space is"
+        }
+      ]
+    },
+    {
+      "question_id": "57264e66dd62a815002e811c",
+      "question": "What does pumping water into the mesoglea do?",
+      "question_word_count": 8,
+      "gold_context_id": 52,
+      "reference_answers": [
+        "increase its bulk and decrease its density",
+        "increase its bulk and decrease its density",
+        "increase its bulk and decrease its density"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "133",
+          "context_id": 52,
+          "distance": 0.2625688314437866,
+          "text": "to increase its bulk and decrease its density, to avoid sinking. Conversely if they move from brackish to full-strength seawater, the rosettes may pump water out of the mesoglea to reduce its volume and increase its density."
+        },
+        {
+          "rank": 2,
+          "id": "132",
+          "context_id": 52,
+          "distance": 0.29019033908843994,
+          "text": "It is uncertain how ctenophores control their buoyancy, but experiments have shown that some species rely on osmotic pressure to adapt to water of different densities. Their body fluids are normally as concentrated as seawater. If they enter less dense brackish water, the ciliary rosettes in the body cavity may pump this into the mesoglea to increase its bulk and decrease its density, to avoid sinking. Conversely if they move"
+        },
+        {
+          "rank": 3,
+          "id": "21",
+          "context_id": 8,
+          "distance": 0.5095748901367188,
+          "text": "dilation of blood vessels associated with inflammation, and leukotrienes that attract certain white blood cells (leukocytes). Common cytokines include interleukins that are responsible for communication between white blood cells; chemokines that promote chemotaxis; and interferons that have anti-viral effects, such as shutting down protein synthesis in the host cell. Growth factors and cytotoxic factors may also be released. These cytokines and other chemicals recruit immune cells to the site of"
+        }
+      ]
+    },
+    {
+      "question_id": "572949306aef051400154c6b",
+      "question": "When was the Third Assessment Report published?",
+      "question_word_count": 7,
+      "gold_context_id": 47,
+      "reference_answers": [
+        "2001",
+        "2001",
+        "2001"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "120",
+          "context_id": 47,
+          "distance": 0.4871593117713928,
+          "text": "in 2100 sea levels would be 0.5–1.4 m [50–140 cm] above 1990 levels. These values are much greater than the 9–88 cm as projected by the IPCC itself in its Third Assessment Report, published in 2001\". This may have been due, in part, to the expanding human understanding of climate."
+        },
+        {
+          "rank": 2,
+          "id": "114",
+          "context_id": 45,
+          "distance": 0.532861053943634,
+          "text": "In October 2010, the open-access scientific journal PLoS Pathogens published a paper by a multinational team who undertook a new investigation into the role of Yersinia pestis in the Black Death following the disputed identification by Drancourt and Raoult in 1998. They assessed the presence of DNA/RNA with Polymerase Chain Reaction (PCR) techniques for Y. pestis from the tooth sockets in human skeletons from mass graves in northern, central and"
+        },
+        {
+          "rank": 3,
+          "id": "5",
+          "context_id": 1,
+          "distance": 0.5415675640106201,
+          "text": "At the beginning of the 20th century, important advancement in geological science was facilitated by the ability to obtain accurate absolute dates to geologic events using radioactive isotopes and other methods. This changed the understanding of geologic time. Previously, geologists could only use fossils and stratigraphic correlation to date sections of rock relative to one another. With isotopic dates it became possible to assign absolute ages to rock units, and"
+        }
+      ]
+    },
+    {
+      "question_id": "572f5703a23a5019007fc575",
+      "question": "What is the alpine valley that the Rhine flows through?",
+      "question_word_count": 10,
+      "gold_context_id": 46,
+      "reference_answers": [
+        "Rhine Valley",
+        "Rhine Valley",
+        "Rhine Valley",
+        "Rhine Valley",
+        "Rhine Valley"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "118",
+          "context_id": 46,
+          "distance": 0.27836287021636963,
+          "text": "Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it from flowing into the open Seeztal valley and then through Lake Walen and Lake Zurich into the river Aare. The Alpine Rhine begins in the most western part of the Swiss canton of Graubünden, and later forms the border between Switzerland to the West and Liechtenstein and later Austria to the East."
+        },
+        {
+          "rank": 2,
+          "id": "117",
+          "context_id": 46,
+          "distance": 0.33228981494903564,
+          "text": "Near Tamins-Reichenau the Anterior Rhine and the Posterior Rhine join and form the Rhine. The river makes a distinctive turn to the north near Chur. This section is nearly 86 km long, and descends from a height of 599 m to 396 m. It flows through a wide glacial alpine valley known as the Rhine Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it"
+        },
+        {
+          "rank": 3,
+          "id": "73",
+          "context_id": 27,
+          "distance": 0.459541916847229,
+          "text": "20th Century fundamentally. Currently Rhine water runs into the sea, or into former marine bays now separated from the sea, in five places, namely at the mouths of the Nieuwe Merwede, Nieuwe Waterway (Nieuwe Maas), Dordtse Kil, Spui and IJssel."
+        }
+      ]
+    },
+    {
+      "question_id": "572fc8a904bcaa1900d76d22",
+      "question": "What kind of committee considered legislation on the development of the Edinburgh Tram Network?",
+      "question_word_count": 14,
+      "gold_context_id": 26,
+      "reference_answers": [
+        "Private Bill",
+        "Private Bill",
+        "Private Bill Committees"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "71",
+          "context_id": 26,
+          "distance": 0.2893855571746826,
+          "text": "property. Private Bill Committees have been set up to consider legislation on issues such as the development of the Edinburgh Tram Network, the Glasgow Airport Rail Link, the Airdrie-Bathgate Rail Link and extensions to the National Gallery of Scotland."
+        },
+        {
+          "rank": 2,
+          "id": "70",
+          "context_id": 26,
+          "distance": 0.37434089183807373,
+          "text": "A further type of committee is normally set up to scrutinise private bills submitted to the Scottish Parliament by an outside party or promoter who is not a member of the Scottish Parliament or Scottish Government. Private bills normally relate to large-scale development projects such as infrastructure projects that require the use of land or property. Private Bill Committees have been set up to consider legislation on issues such as"
+        },
+        {
+          "rank": 3,
+          "id": "11",
+          "context_id": 4,
+          "distance": 0.5068556070327759,
+          "text": "Starting in 1965, Donald Davies at the National Physical Laboratory, UK, independently developed the same message routing methodology as developed by Baran. He called it packet switching, a more accessible name than Baran's, and proposed to build a nationwide network in the UK. He gave a talk on the proposal in 1966, after which a person from the Ministry of Defence (MoD) told him about Baran's work. A member of"
+        }
+      ]
+    },
+    {
+      "question_id": "571a484210f8ca1400304fc0",
+      "question": "How many atoms combine to form dioxygen?",
+      "question_word_count": 7,
+      "gold_context_id": 39,
+      "reference_answers": [
+        "two atoms",
+        "two",
+        "two",
+        "two",
+        "two"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "100",
+          "context_id": 39,
+          "distance": 0.2992936968803406,
+          "text": "and helium. At standard temperature and pressure, two atoms of the element bind to form dioxygen, a colorless and odorless diatomic gas with the formula O 2. Diatomic oxygen gas constitutes 20.8% of the Earth's atmosphere. However, monitoring of atmospheric oxygen levels show a global downward trend, because of fossil-fuel burning. Oxygen is the most abundant element by mass in the Earth's crust as part of oxide compounds such as"
+        },
+        {
+          "rank": 2,
+          "id": "99",
+          "context_id": 39,
+          "distance": 0.36439013481140137,
+          "text": "Oxygen is a chemical element with symbol O and atomic number 8. It is a member of the chalcogen group on the periodic table and is a highly reactive nonmetal and oxidizing agent that readily forms compounds (notably oxides) with most elements. By mass, oxygen is the third-most abundant element in the universe, after hydrogen and helium. At standard temperature and pressure, two atoms of the element bind to form"
+        },
+        {
+          "rank": 3,
+          "id": "83",
+          "context_id": 33,
+          "distance": 0.49092864990234375,
+          "text": "Breathing pure O 2 in space applications, such as in some modern space suits, or in early spacecraft such as Apollo, causes no damage due to the low total pressures used. In the case of spacesuits, the O 2 partial pressure in the breathing gas is, in general, about 30 kPa (1.4 times normal), and the resulting O 2 partial pressure in the astronaut's arterial blood is only marginally more"
+        }
+      ]
+    },
+    {
+      "question_id": "57302bd0b2c2fd14005689dc",
+      "question": "Who leads The Islamic State?",
+      "question_word_count": 5,
+      "gold_context_id": 35,
+      "reference_answers": [
+        "Sunni Arabs",
+        "Sunni Arabs",
+        "Sunni Arabs"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "87",
+          "context_id": 35,
+          "distance": 0.27812427282333374,
+          "text": "\"The Islamic State\", formerly known as the \"Islamic State of Iraq and the Levant\" and before that as the \"Islamic State of Iraq\", (and called the acronym Daesh by its many detractors), is a Wahhabi/Salafi jihadist extremist militant group which is led by and mainly composed of Sunni Arabs from Iraq and Syria. In 2014, the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims"
+        },
+        {
+          "rank": 2,
+          "id": "88",
+          "context_id": 35,
+          "distance": 0.36438751220703125,
+          "text": "the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims worldwide. As of March 2015[update], it had control over territory occupied by ten million people in Iraq and Syria, and has nominal control over small areas of Libya, Nigeria and Afghanistan. (While a self-described state, it lacks international recognition.) The group also operates or has affiliates in other parts of the world, including North Africa"
+        },
+        {
+          "rank": 3,
+          "id": "60",
+          "context_id": 22,
+          "distance": 0.5225003361701965,
+          "text": "Iqbal expressed fears that not only would secularism and secular nationalism weaken the spiritual foundations of Islam and Muslim society, but that India's Hindu-majority population would crowd out Muslim heritage, culture and political influence. In his travels to Egypt, Afghanistan, Palestine and Syria, he promoted ideas of greater Islamic political co-operation and unity, calling for the shedding of nationalist differences. Sir Muhammad Iqbal was elected president of the Muslim League"
+        }
+      ]
+    },
+    {
+      "question_id": "5726378238643c19005ad313",
+      "question": "Who developed the same technology as Baran ",
+      "question_word_count": 7,
+      "gold_context_id": 4,
+      "reference_answers": [
+        "Donald Davies",
+        "Donald Davies",
+        "Donald Davies"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "11",
+          "context_id": 4,
+          "distance": 0.39811617136001587,
+          "text": "Starting in 1965, Donald Davies at the National Physical Laboratory, UK, independently developed the same message routing methodology as developed by Baran. He called it packet switching, a more accessible name than Baran's, and proposed to build a nationwide network in the UK. He gave a talk on the proposal in 1966, after which a person from the Ministry of Defence (MoD) told him about Baran's work. A member of"
+        },
+        {
+          "rank": 2,
+          "id": "12",
+          "context_id": 4,
+          "distance": 0.4077085256576538,
+          "text": "person from the Ministry of Defence (MoD) told him about Baran's work. A member of Davies' team (Roger Scantlebury) met Lawrence Roberts at the 1967 ACM Symposium on Operating System Principles and suggested it for use in the ARPANET."
+        },
+        {
+          "rank": 3,
+          "id": "138",
+          "context_id": 54,
+          "distance": 0.5133209824562073,
+          "text": "DECnet is a suite of network protocols created by Digital Equipment Corporation, originally released in 1975 in order to connect two PDP-11 minicomputers. It evolved into one of the first peer-to-peer network architectures, thus transforming DEC into a networking powerhouse in the 1980s. Initially built with three layers, it later (1982) evolved into a seven-layer OSI-compliant networking protocol. The DECnet protocols were designed entirely by Digital Equipment Corporation. However, DECnet"
+        }
+      ]
+    },
+    {
+      "question_id": "57263ea0271a42140099d7c3",
+      "question": "What is  DECnet",
+      "question_word_count": 3,
+      "gold_context_id": 54,
+      "reference_answers": [
+        "a suite of network protocols created by Digital Equipment Corporation",
+        "a suite of network protocols created by Digital Equipment Corporation",
+        "suite of network protocols created by Digital Equipment Corporation"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "138",
+          "context_id": 54,
+          "distance": 0.21463263034820557,
+          "text": "DECnet is a suite of network protocols created by Digital Equipment Corporation, originally released in 1975 in order to connect two PDP-11 minicomputers. It evolved into one of the first peer-to-peer network architectures, thus transforming DEC into a networking powerhouse in the 1980s. Initially built with three layers, it later (1982) evolved into a seven-layer OSI-compliant networking protocol. The DECnet protocols were designed entirely by Digital Equipment Corporation. However, DECnet"
+        },
+        {
+          "rank": 2,
+          "id": "139",
+          "context_id": 54,
+          "distance": 0.2933579683303833,
+          "text": "OSI-compliant networking protocol. The DECnet protocols were designed entirely by Digital Equipment Corporation. However, DECnet Phase II (and later) were open standards with published specifications, and several implementations were developed outside DEC, including one for Linux."
+        },
+        {
+          "rank": 3,
+          "id": "11",
+          "context_id": 4,
+          "distance": 0.5020482540130615,
+          "text": "Starting in 1965, Donald Davies at the National Physical Laboratory, UK, independently developed the same message routing methodology as developed by Baran. He called it packet switching, a more accessible name than Baran's, and proposed to build a nationwide network in the UK. He gave a talk on the proposal in 1966, after which a person from the Ministry of Defence (MoD) told him about Baran's work. A member of"
+        }
+      ]
+    },
+    {
+      "question_id": "572a0ecb1d04691400779719",
+      "question": "What was persistent unemployment have a negative effect on?",
+      "question_word_count": 9,
+      "gold_context_id": 41,
+      "reference_answers": [
+        "subsequent long-run economic growth",
+        "subsequent long-run economic growth",
+        "long-run economic growth"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "105",
+          "context_id": 41,
+          "distance": 0.3552612066268921,
+          "text": "According to economists David Castells-Quintana and Vicente Royuela, increasing inequality harms economic growth. High and persistent unemployment, in which inequality increases, has a negative effect on subsequent long-run economic growth. Unemployment can harm growth not only because it is a waste of resources, but also because it generates redistributive pressures and subsequent distortions, drives people to poverty, constrains liquidity limiting labor mobility, and erodes self-esteem promoting social dislocation, unrest and"
+        },
+        {
+          "rank": 2,
+          "id": "106",
+          "context_id": 41,
+          "distance": 0.399474561214447,
+          "text": "to poverty, constrains liquidity limiting labor mobility, and erodes self-esteem promoting social dislocation, unrest and conflict. Policies aiming at controlling unemployment and in particular at reducing its inequality-associated effects support economic growth."
+        },
+        {
+          "rank": 3,
+          "id": "9",
+          "context_id": 3,
+          "distance": 0.5215794444084167,
+          "text": "The energy crisis led to greater interest in renewable energy, nuclear power and domestic fossil fuels. There is criticism that American energy policies since the crisis have been dominated by crisis-mentality thinking, promoting expensive quick fixes and single-shot solutions that ignore market and technology realities. Instead of providing stable rules that support basic research while leaving plenty of scope for entrepreneurship and innovation, congresses and presidents have repeatedly backed policies"
+        }
+      ]
+    },
+    {
+      "question_id": "571156152419e3140095559e",
+      "question": "What was the ideal duty of a Newcomen engine?",
+      "question_word_count": 9,
+      "gold_context_id": 10,
+      "reference_answers": [
+        "7 million",
+        "7 million",
+        "7 million"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "26",
+          "context_id": 10,
+          "distance": 0.28609299659729004,
+          "text": "best examples of Newcomen designs had a duty of about 7 million, but most were closer to 5 million. Watt's original low-pressure designs were able to deliver duty as high as 25 million, but averaged about 17. This was a three-fold improvement over the average Newcomen design. Early Watt engines equipped with high-pressure steam improved this to 65 million."
+        },
+        {
+          "rank": 2,
+          "id": "25",
+          "context_id": 10,
+          "distance": 0.2888472080230713,
+          "text": "The historical measure of a steam engine's energy efficiency was its \"duty\". The concept of duty was first introduced by Watt in order to illustrate how much more efficient his engines were over the earlier Newcomen designs. Duty is the number of foot-pounds of work delivered by burning one bushel (94 pounds) of coal. The best examples of Newcomen designs had a duty of about 7 million, but most were"
+        },
+        {
+          "rank": 3,
+          "id": "109",
+          "context_id": 42,
+          "distance": 0.487177312374115,
+          "text": "but not reproduced. It was found that steam turbines were not ideally suited to the railroad environment and these locomotives failed to oust the classic reciprocating steam unit in the way that modern diesel and electric traction has done.[citation needed]"
+        }
+      ]
+    },
+    {
+      "question_id": "5728e07e3acd2414000e00eb",
+      "question": "What is the goal of individual civil disobedience?",
+      "question_word_count": 8,
+      "gold_context_id": 48,
+      "reference_answers": [
+        "render certain laws ineffective",
+        "to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue",
+        "render certain laws ineffective, to cause their repeal",
+        "t to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue",
+        "to render certain laws ineffective,"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "121",
+          "context_id": 48,
+          "distance": 0.24467188119888306,
+          "text": "Non-revolutionary civil disobedience is a simple disobedience of laws on the grounds that they are judged \"wrong\" by an individual conscience, or as part of an effort to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue. Revolutionary civil disobedience is more of an active attempt to overthrow a government (or to change cultural traditions, social customs, religious"
+        },
+        {
+          "rank": 2,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.34254318475723267,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        },
+        {
+          "rank": 3,
+          "id": "122",
+          "context_id": 48,
+          "distance": 0.34837234020233154,
+          "text": "an active attempt to overthrow a government (or to change cultural traditions, social customs, religious beliefs, etc...revolution doesn't have to be political, i.e. \"cultural revolution\", it simply implies sweeping and widespread change to a section of the social fabric). Gandhi's acts have been described as revolutionary civil disobedience. It has been claimed that the Hungarians under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of"
+        }
+      ]
+    },
+    {
+      "question_id": "5728202c4b864d19001644f0",
+      "question": "What other topics can Civil disobedience pertain to?",
+      "question_word_count": 8,
+      "gold_context_id": 48,
+      "reference_answers": [
+        "cultural traditions, social customs, religious beliefs",
+        "revolutionary civil disobedience",
+        "change cultural traditions, social customs, religious beliefs, etc",
+        "cultural traditions, social customs, religious beliefs",
+        "peaceable revolution"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "121",
+          "context_id": 48,
+          "distance": 0.2714357376098633,
+          "text": "Non-revolutionary civil disobedience is a simple disobedience of laws on the grounds that they are judged \"wrong\" by an individual conscience, or as part of an effort to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue. Revolutionary civil disobedience is more of an active attempt to overthrow a government (or to change cultural traditions, social customs, religious"
+        },
+        {
+          "rank": 2,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.3022456169128418,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        },
+        {
+          "rank": 3,
+          "id": "122",
+          "context_id": 48,
+          "distance": 0.37621062994003296,
+          "text": "an active attempt to overthrow a government (or to change cultural traditions, social customs, religious beliefs, etc...revolution doesn't have to be political, i.e. \"cultural revolution\", it simply implies sweeping and widespread change to a section of the social fabric). Gandhi's acts have been described as revolutionary civil disobedience. It has been claimed that the Hungarians under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of"
+        }
+      ]
+    },
+    {
+      "question_id": "5727db85ff5b5019007d96fd",
+      "question": "In what year did Harvard Stadium become the first ever concrete reinforced stadium in the country?",
+      "question_word_count": 16,
+      "gold_context_id": 51,
+      "reference_answers": [
+        "1903",
+        "1903",
+        "1903"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "129",
+          "context_id": 51,
+          "distance": 0.2435704469680786,
+          "text": "ago during football's early days (it won the Rose Bowl in 1920), both it and Yale have influenced the way the game is played. In 1903, Harvard Stadium introduced a new era into football with the first-ever permanent reinforced concrete stadium of its kind in the country. The stadium's structure actually played a role in the evolution of the college game. Seeking to reduce the alarming number of deaths and"
+        },
+        {
+          "rank": 2,
+          "id": "128",
+          "context_id": 51,
+          "distance": 0.37753838300704956,
+          "text": "Harvard's athletic rivalry with Yale is intense in every sport in which they meet, coming to a climax each fall in the annual football meeting, which dates back to 1875 and is usually called simply \"The Game\". While Harvard's football team is no longer one of the country's best as it often was a century ago during football's early days (it won the Rose Bowl in 1920), both it and"
+        },
+        {
+          "rank": 3,
+          "id": "75",
+          "context_id": 28,
+          "distance": 0.484624445438385,
+          "text": "money could not be used for buildings. The original physical campus was financed by donations from wealthy Chicagoans like Silas B. Cobb who provided the funds for the campus' first building, Cobb Lecture Hall, and matched Marshall Field's pledge of $100,000. Other early benefactors included businessmen Charles L. Hutchinson (trustee, treasurer and donor of Hutchinson Commons), Martin A. Ryerson (president of the board of trustees and donor of the Ryerson"
+        }
+      ]
+    },
+    {
+      "question_id": "572fce13a23a5019007fca13",
+      "question": "What do statements from the PO and member in charge of the bill also indicate?",
+      "question_word_count": 15,
+      "gold_context_id": 40,
+      "reference_answers": [
+        "whether the bill is within the legislative competence of the Parliament",
+        "whether the bill is within the legislative competence of the Parliament",
+        "whether the bill is within the legislative competence of the Parliament"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "103",
+          "context_id": 40,
+          "distance": 0.3201864957809448,
+          "text": "associated with it. Statements from the Presiding Officer and the member in charge of the bill are also lodged indicating whether the bill is within the legislative competence of the Parliament. Stage 1 usually takes place, initially, in the relevant committee or committees and is then submitted to the whole Parliament for a full debate in the chamber on the general principles of the bill. If the whole Parliament agrees"
+        },
+        {
+          "rank": 2,
+          "id": "102",
+          "context_id": 40,
+          "distance": 0.338090181350708,
+          "text": "Stage 1 is the first, or introductory stage of the bill, where the minister or member in charge of the bill will formally introduce it to Parliament together with its accompanying documents – Explanatory Notes, a Policy Memorandum setting out the policy underlying the bill, and a Financial Memorandum setting out the costs and savings associated with it. Statements from the Presiding Officer and the member in charge of the"
+        },
+        {
+          "rank": 3,
+          "id": "104",
+          "context_id": 40,
+          "distance": 0.41687822341918945,
+          "text": "in the chamber on the general principles of the bill. If the whole Parliament agrees in a vote to the general principles of the bill, it then proceeds to Stage 2."
+        }
+      ]
+    },
+    {
+      "question_id": "5729e2316aef0514001550c8",
+      "question": "What is the estimate for the amount of tree species in the amazon tropical rain forest?",
+      "question_word_count": 16,
+      "gold_context_id": 23,
+      "reference_answers": [
+        "16,000 species",
+        "16,000",
+        "16,000"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "64",
+          "context_id": 23,
+          "distance": 0.28459489345550537,
+          "text": "States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over half of the planet's remaining rainforests, and comprises the largest and most biodiverse tract of tropical rainforest in the world, with an estimated 390 billion individual trees divided into 16,000 species."
+        },
+        {
+          "rank": 2,
+          "id": "62",
+          "context_id": 23,
+          "distance": 0.30142855644226074,
+          "text": "The Amazon rainforest (Portuguese: Floresta Amazônica or Amazônia; Spanish: Selva Amazónica, Amazonía or usually Amazonia; French: Forêt amazonienne; Dutch: Amazoneregenwoud), also known in English as Amazonia or the Amazon Jungle, is a moist broadleaf forest that covers most of the Amazon basin of South America. This basin encompasses 7,000,000 square kilometres (2,700,000 sq mi), of which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes"
+        },
+        {
+          "rank": 3,
+          "id": "63",
+          "context_id": 23,
+          "distance": 0.34290117025375366,
+          "text": "which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes territory belonging to nine nations. The majority of the forest is contained within Brazil, with 60% of the rainforest, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Venezuela, Ecuador, Bolivia, Guyana, Suriname and French Guiana. States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over"
+        }
+      ]
+    },
+    {
+      "question_id": "571156152419e3140095559b",
+      "question": "How was the efficiency of a steam engine typically evaluated?",
+      "question_word_count": 10,
+      "gold_context_id": 10,
+      "reference_answers": [
+        "duty",
+        "duty"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "25",
+          "context_id": 10,
+          "distance": 0.3288411498069763,
+          "text": "The historical measure of a steam engine's energy efficiency was its \"duty\". The concept of duty was first introduced by Watt in order to illustrate how much more efficient his engines were over the earlier Newcomen designs. Duty is the number of foot-pounds of work delivered by burning one bushel (94 pounds) of coal. The best examples of Newcomen designs had a duty of about 7 million, but most were"
+        },
+        {
+          "rank": 2,
+          "id": "108",
+          "context_id": 42,
+          "distance": 0.39260149002075195,
+          "text": "provided by electric motors. A limited number of steam turbine railroad locomotives were manufactured. Some non-condensing direct-drive locomotives did meet with some success for long haul freight operations in Sweden and for express passenger work in Britain, but were not repeated. Elsewhere, notably in the U.S.A., more advanced designs with electric transmission were built experimentally, but not reproduced. It was found that steam turbines were not ideally suited to the"
+        },
+        {
+          "rank": 3,
+          "id": "109",
+          "context_id": 42,
+          "distance": 0.40426206588745117,
+          "text": "but not reproduced. It was found that steam turbines were not ideally suited to the railroad environment and these locomotives failed to oust the classic reciprocating steam unit in the way that modern diesel and electric traction has done.[citation needed]"
+        }
+      ]
+    },
+    {
+      "question_id": "572fe41e04bcaa1900d76e4b",
+      "question": "Where does the Rhine make a distinctive turn to the north? ",
+      "question_word_count": 11,
+      "gold_context_id": 46,
+      "reference_answers": [
+        "Chur",
+        "Chur",
+        "Chur",
+        "Chur"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "117",
+          "context_id": 46,
+          "distance": 0.3471566438674927,
+          "text": "Near Tamins-Reichenau the Anterior Rhine and the Posterior Rhine join and form the Rhine. The river makes a distinctive turn to the north near Chur. This section is nearly 86 km long, and descends from a height of 599 m to 396 m. It flows through a wide glacial alpine valley known as the Rhine Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it"
+        },
+        {
+          "rank": 2,
+          "id": "73",
+          "context_id": 27,
+          "distance": 0.4066586494445801,
+          "text": "20th Century fundamentally. Currently Rhine water runs into the sea, or into former marine bays now separated from the sea, in five places, namely at the mouths of the Nieuwe Merwede, Nieuwe Waterway (Nieuwe Maas), Dordtse Kil, Spui and IJssel."
+        },
+        {
+          "rank": 3,
+          "id": "118",
+          "context_id": 46,
+          "distance": 0.4232673645019531,
+          "text": "Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it from flowing into the open Seeztal valley and then through Lake Walen and Lake Zurich into the river Aare. The Alpine Rhine begins in the most western part of the Swiss canton of Graubünden, and later forms the border between Switzerland to the West and Liechtenstein and later Austria to the East."
+        }
+      ]
+    },
+    {
+      "question_id": "5725d42a89a1e219009abf5c",
+      "question": "Who was Bill Aiken's adopted mother?",
+      "question_word_count": 6,
+      "gold_context_id": 32,
+      "reference_answers": [
+        "Lupe Mayorga",
+        "Lupe Mayorga",
+        "Lupe Mayorga"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "81",
+          "context_id": 32,
+          "distance": 0.5552530884742737,
+          "text": "In the 1970s, the city was the subject of a song, \"Walking Into Fresno\", written by Hall Of Fame guitarist Bill Aken and recorded by Bob Gallion of the world-famous \"WWVA Jamboree\" radio and television show in Wheeling, West Virginia. Aken, adopted by Mexican movie actress Lupe Mayorga, grew up in the neighboring town of Madera and his song chronicled the hardships faced by the migrant farm workers he saw"
+        },
+        {
+          "rank": 2,
+          "id": "74",
+          "context_id": 28,
+          "distance": 0.6233115196228027,
+          "text": "The University of Chicago was created and incorporated as a coeducational, secular institution in 1890 by the American Baptist Education Society and a donation from oil magnate and philanthropist John D. Rockefeller on land donated by Marshall Field. While the Rockefeller donation provided money for academic operations and long-term endowment, it was stipulated that such money could not be used for buildings. The original physical campus was financed by donations"
+        },
+        {
+          "rank": 3,
+          "id": "44",
+          "context_id": 17,
+          "distance": 0.6352167725563049,
+          "text": "Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony; he established Fort Caroline in what is now Jacksonville, Florida. War at home again precluded a resupply mission, and the colony struggled. In 1565 the Spanish decided to enforce their claim to La Florida, and sent Pedro Menéndez de Avilés, who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French"
+        }
+      ]
+    },
+    {
+      "question_id": "57293c246aef051400154bb8",
+      "question": "Who is on the IPCC Panel?",
+      "question_word_count": 6,
+      "gold_context_id": 2,
+      "reference_answers": [
+        "representatives appointed by governments and organizations",
+        "representatives appointed by governments and organizations",
+        "representatives appointed by governments and organizations"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "7",
+          "context_id": 2,
+          "distance": 0.27833646535873413,
+          "text": "The IPCC Panel is composed of representatives appointed by governments and organizations. Participation of delegates with appropriate expertise is encouraged. Plenary sessions of the IPCC and IPCC Working groups are held at the level of government representatives. Non Governmental and Intergovernmental Organizations may be allowed to attend as observers. Sessions of the IPCC Bureau, workshops, expert and lead authors meetings are by invitation only. Attendance at the 2003 meeting included"
+        },
+        {
+          "rank": 2,
+          "id": "8",
+          "context_id": 2,
+          "distance": 0.4454323649406433,
+          "text": "expert and lead authors meetings are by invitation only. Attendance at the 2003 meeting included 350 government officials and climate change experts. After the opening ceremonies, closed plenary sessions were held. The meeting report states there were 322 persons in attendance at Sessions with about seven-eighths of participants being from governmental organizations."
+        },
+        {
+          "rank": 3,
+          "id": "35",
+          "context_id": 14,
+          "distance": 0.5299160480499268,
+          "text": "Officer, and Dean of Students of the university), the Directors of Argonne National Laboratory and Fermilab, the Secretary of the university, and the Student Ombudsperson. As of August 2009[update], the Chairman of the Board of Trustees is Andrew Alper, and the President of the university is Robert Zimmer. In December 2013 it was announced that the Director of Argonne National Laboratory, Eric Isaacs, would become Provost. Isaacs was replaced as"
+        }
+      ]
+    },
+    {
+      "question_id": "5710eb6fb654c5140001fa1a",
+      "question": "When did Ribault first establish a settlement in South Carolina?",
+      "question_word_count": 10,
+      "gold_context_id": 17,
+      "reference_answers": [
+        "1562",
+        "1562",
+        "1564"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "43",
+          "context_id": 17,
+          "distance": 0.3047199845314026,
+          "text": "French Huguenots made two attempts to establish a haven in North America. In 1562, naval officer Jean Ribault led an expedition that explored Florida and the present-day Southeastern U.S., and founded the outpost of Charlesfort on Parris Island, South Carolina. The Wars of Religion precluded a return voyage, and the outpost was abandoned. In 1564, Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony;"
+        },
+        {
+          "rank": 2,
+          "id": "44",
+          "context_id": 17,
+          "distance": 0.34042465686798096,
+          "text": "Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony; he established Fort Caroline in what is now Jacksonville, Florida. War at home again precluded a resupply mission, and the colony struggled. In 1565 the Spanish decided to enforce their claim to La Florida, and sent Pedro Menéndez de Avilés, who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French"
+        },
+        {
+          "rank": 3,
+          "id": "45",
+          "context_id": 17,
+          "distance": 0.47947269678115845,
+          "text": "who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French and executed most of the Protestant captives."
+        }
+      ]
+    },
+    {
+      "question_id": "56e1c720e3433e140042316b",
+      "question": "In what expression can one expect to find DTIME(n)",
+      "question_word_count": 9,
+      "gold_context_id": 12,
+      "reference_answers": [
+        "DTIME(n2)",
+        "DTIME(n2)",
+        "DTIME(n2)"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "29",
+          "context_id": 12,
+          "distance": 0.3675081729888916,
+          "text": "For the complexity classes defined in this way, it is desirable to prove that relaxing the requirements on (say) computation time indeed defines a bigger set of problems. In particular, although DTIME(n) is contained in DTIME(n2), it would be interesting to know if the inclusion is strict. For time and space requirements, the answer to such questions is given by the time and space hierarchy theorems respectively. They are called"
+        },
+        {
+          "rank": 2,
+          "id": "77",
+          "context_id": 29,
+          "distance": 0.46402812004089355,
+          "text": "The time and space hierarchy theorems form the basis for most separation results of complexity classes. For instance, the time hierarchy theorem tells us that P is strictly contained in EXPTIME, and the space hierarchy theorem tells us that L is strictly contained in PSPACE."
+        },
+        {
+          "rank": 3,
+          "id": "30",
+          "context_id": 12,
+          "distance": 0.481406569480896,
+          "text": "such questions is given by the time and space hierarchy theorems respectively. They are called hierarchy theorems because they induce a proper hierarchy on the classes defined by constraining the respective resources. Thus there are pairs of complexity classes such that one is properly included in the other. Having deduced such proper set inclusions, we can proceed to make quantitative statements about how much more additional time or space is"
+        }
+      ]
+    },
+    {
+      "question_id": "5728284e3acd2414000df5d1",
+      "question": "What year did the the case go before the supreme court?",
+      "question_word_count": 11,
+      "gold_context_id": 36,
+      "reference_answers": [
+        "1978",
+        "1978",
+        "1978",
+        "1978",
+        "1978"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.5157378911972046,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        },
+        {
+          "rank": 2,
+          "id": "74",
+          "context_id": 28,
+          "distance": 0.5384361743927002,
+          "text": "The University of Chicago was created and incorporated as a coeducational, secular institution in 1890 by the American Baptist Education Society and a donation from oil magnate and philanthropist John D. Rockefeller on land donated by Marshall Field. While the Rockefeller donation provided money for academic operations and long-term endowment, it was stipulated that such money could not be used for buildings. The original physical campus was financed by donations"
+        },
+        {
+          "rank": 3,
+          "id": "123",
+          "context_id": 48,
+          "distance": 0.5445285439491272,
+          "text": "under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of civil disobedience accomplishing \"peaceable revolution.\" Howard Zinn, Harvey Wheeler, and others have identified the right espoused in The Declaration of Independence to \"alter or abolish\" an unjust government to be a principle of civil disobedience."
+        }
+      ]
+    },
+    {
+      "question_id": "5729f4b41d0469140077968d",
+      "question": "The receptors on a killer T cell must bind to how many MHC: antigen complexes in order to activate the cell?",
+      "question_word_count": 21,
+      "gold_context_id": 53,
+      "reference_answers": [
+        "a single MHC:antigen molecule",
+        "single",
+        "a single MHC:antigen molecule"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "135",
+          "context_id": 53,
+          "distance": 0.17477047443389893,
+          "text": "MHC:antigen complex than observed for killer T cells, meaning many receptors (around 200–300) on the helper T cell must be bound by an MHC:antigen in order to activate the helper cell, while killer T cells can be activated by engagement of a single MHC:antigen molecule. Helper T cell activation also requires longer duration of engagement with an antigen-presenting cell. The activation of a resting helper T cell causes it to"
+        },
+        {
+          "rank": 2,
+          "id": "134",
+          "context_id": 53,
+          "distance": 0.23970037698745728,
+          "text": "Helper T cells express T cell receptors (TCR) that recognize antigen bound to Class II MHC molecules. The MHC:antigen complex is also recognized by the helper cell's CD4 co-receptor, which recruits molecules inside the T cell (e.g., Lck) that are responsible for the T cell's activation. Helper T cells have a weaker association with the MHC:antigen complex than observed for killer T cells, meaning many receptors (around 200–300) on the"
+        },
+        {
+          "rank": 3,
+          "id": "136",
+          "context_id": 53,
+          "distance": 0.36631321907043457,
+          "text": "with an antigen-presenting cell. The activation of a resting helper T cell causes it to release cytokines that influence the activity of many cell types. Cytokine signals produced by helper T cells enhance the microbicidal function of macrophages and the activity of killer T cells. In addition, helper T cell activation causes an upregulation of molecules expressed on the T cell's surface, such as CD40 ligand (also called CD154), which"
+        }
+      ]
+    },
+    {
+      "question_id": "5710eb6fb654c5140001fa17",
+      "question": "What was the name of the first Huguenot outpost in South Carolina?",
+      "question_word_count": 12,
+      "gold_context_id": 17,
+      "reference_answers": [
+        "Charlesfort",
+        "Charlesfort",
+        "Charlesfort"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "43",
+          "context_id": 17,
+          "distance": 0.2805493474006653,
+          "text": "French Huguenots made two attempts to establish a haven in North America. In 1562, naval officer Jean Ribault led an expedition that explored Florida and the present-day Southeastern U.S., and founded the outpost of Charlesfort on Parris Island, South Carolina. The Wars of Religion precluded a return voyage, and the outpost was abandoned. In 1564, Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony;"
+        },
+        {
+          "rank": 2,
+          "id": "44",
+          "context_id": 17,
+          "distance": 0.4764496088027954,
+          "text": "Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony; he established Fort Caroline in what is now Jacksonville, Florida. War at home again precluded a resupply mission, and the colony struggled. In 1565 the Spanish decided to enforce their claim to La Florida, and sent Pedro Menéndez de Avilés, who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French"
+        },
+        {
+          "rank": 3,
+          "id": "45",
+          "context_id": 17,
+          "distance": 0.48464828729629517,
+          "text": "who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French and executed most of the Protestant captives."
+        }
+      ]
+    },
+    {
+      "question_id": "57377aac1c4567190057447a",
+      "question": "What equation desribed the physics of force before the current Schrodinger equation?",
+      "question_word_count": 12,
+      "gold_context_id": 34,
+      "reference_answers": [
+        "Newtonian",
+        "Newtonian equations",
+        "Newtonian equations.",
+        "Newtonian",
+        "Newtonian equations"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "85",
+          "context_id": 34,
+          "distance": 0.30826008319854736,
+          "text": "The notion \"force\" keeps its meaning in quantum mechanics, though one is now dealing with operators instead of classical variables and though the physics is now described by the Schrödinger equation instead of Newtonian equations. This has the consequence that the results of a measurement are now sometimes \"quantized\", i.e. they appear in discrete portions. This is, of course, difficult to imagine in the context of \"forces\". However, the potentials"
+        },
+        {
+          "rank": 2,
+          "id": "86",
+          "context_id": 34,
+          "distance": 0.42610466480255127,
+          "text": "This is, of course, difficult to imagine in the context of \"forces\". However, the potentials V(x,y,z) or fields, from which the forces generally can be derived, are treated similar to classical position variables, i.e., ."
+        },
+        {
+          "rank": 3,
+          "id": "39",
+          "context_id": 15,
+          "distance": 0.5029776096343994,
+          "text": "is perpendicular to the path, and one that is tangential to the path. This yields both the tangential force, which accelerates the object by either slowing it down or speeding it up, and the radial (centripetal) force, which changes its direction."
+        }
+      ]
+    },
+    {
+      "question_id": "5728284e3acd2414000df5cd",
+      "question": "What was Joseph Haas arrested for?",
+      "question_word_count": 6,
+      "gold_context_id": 36,
+      "reference_answers": [
+        "sending an email to the Lebanon, New Hampshire city councilors",
+        "sending an email",
+        "sending an email to the Lebanon, New Hampshire city councilors",
+        "sending an email",
+        "sending an email to the Lebanon"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "91",
+          "context_id": 36,
+          "distance": 0.38391757011413574,
+          "text": "classic way of expressing defiance toward the government and unwillingness to stand for its policies. For example, Joseph Haas was arrested for allegedly sending an email to the Lebanon, New Hampshire city councilors stating, \"Wise up or die.\""
+        },
+        {
+          "rank": 2,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.5802789926528931,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        },
+        {
+          "rank": 3,
+          "id": "123",
+          "context_id": 48,
+          "distance": 0.6054537892341614,
+          "text": "under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of civil disobedience accomplishing \"peaceable revolution.\" Howard Zinn, Harvey Wheeler, and others have identified the right espoused in The Declaration of Independence to \"alter or abolish\" an unjust government to be a principle of civil disobedience."
+        }
+      ]
+    },
+    {
+      "question_id": "571a484210f8ca1400304fc1",
+      "question": "Roughly, how much oxygen makes up the Earth crust?",
+      "question_word_count": 9,
+      "gold_context_id": 39,
+      "reference_answers": [
+        "almost half",
+        "almost half",
+        "half",
+        "almost half",
+        "half"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "100",
+          "context_id": 39,
+          "distance": 0.2815294861793518,
+          "text": "and helium. At standard temperature and pressure, two atoms of the element bind to form dioxygen, a colorless and odorless diatomic gas with the formula O 2. Diatomic oxygen gas constitutes 20.8% of the Earth's atmosphere. However, monitoring of atmospheric oxygen levels show a global downward trend, because of fossil-fuel burning. Oxygen is the most abundant element by mass in the Earth's crust as part of oxide compounds such as"
+        },
+        {
+          "rank": 2,
+          "id": "101",
+          "context_id": 39,
+          "distance": 0.3138818144798279,
+          "text": "abundant element by mass in the Earth's crust as part of oxide compounds such as silicon dioxide, making up almost half of the crust's mass."
+        },
+        {
+          "rank": 3,
+          "id": "99",
+          "context_id": 39,
+          "distance": 0.3629451394081116,
+          "text": "Oxygen is a chemical element with symbol O and atomic number 8. It is a member of the chalcogen group on the periodic table and is a highly reactive nonmetal and oxidizing agent that readily forms compounds (notably oxides) with most elements. By mass, oxygen is the third-most abundant element in the universe, after hydrogen and helium. At standard temperature and pressure, two atoms of the element bind to form"
+        }
+      ]
+    },
+    {
+      "question_id": "5710eb6fb654c5140001fa19",
+      "question": "Which Spanish officer established the settlement at St. Augustine?",
+      "question_word_count": 9,
+      "gold_context_id": 17,
+      "reference_answers": [
+        "Pedro Menéndez de Avilés",
+        "Pedro Menéndez de Avilés",
+        "Pedro Menéndez de Avilés"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "45",
+          "context_id": 17,
+          "distance": 0.2922471761703491,
+          "text": "who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French and executed most of the Protestant captives."
+        },
+        {
+          "rank": 2,
+          "id": "44",
+          "context_id": 17,
+          "distance": 0.3829019069671631,
+          "text": "Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony; he established Fort Caroline in what is now Jacksonville, Florida. War at home again precluded a resupply mission, and the colony struggled. In 1565 the Spanish decided to enforce their claim to La Florida, and sent Pedro Menéndez de Avilés, who established the settlement of St. Augustine near Fort Caroline. Menéndez' forces routed the French"
+        },
+        {
+          "rank": 3,
+          "id": "43",
+          "context_id": 17,
+          "distance": 0.47501081228256226,
+          "text": "French Huguenots made two attempts to establish a haven in North America. In 1562, naval officer Jean Ribault led an expedition that explored Florida and the present-day Southeastern U.S., and founded the outpost of Charlesfort on Parris Island, South Carolina. The Wars of Religion precluded a return voyage, and the outpost was abandoned. In 1564, Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony;"
+        }
+      ]
+    },
+    {
+      "question_id": "572900f73f37b31900477f6b",
+      "question": "What compounds are released by injured or infected cells, triggering inflammation?",
+      "question_word_count": 11,
+      "gold_context_id": 8,
+      "reference_answers": [
+        "eicosanoids and cytokines",
+        "eicosanoids and cytokines",
+        "eicosanoids"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "22",
+          "context_id": 8,
+          "distance": 0.2722904086112976,
+          "text": "also be released. These cytokines and other chemicals recruit immune cells to the site of infection and promote healing of any damaged tissue following the removal of pathogens."
+        },
+        {
+          "rank": 2,
+          "id": "20",
+          "context_id": 8,
+          "distance": 0.27825772762298584,
+          "text": "Inflammation is one of the first responses of the immune system to infection. The symptoms of inflammation are redness, swelling, heat, and pain, which are caused by increased blood flow into tissue. Inflammation is produced by eicosanoids and cytokines, which are released by injured or infected cells. Eicosanoids include prostaglandins that produce fever and the dilation of blood vessels associated with inflammation, and leukotrienes that attract certain white blood cells"
+        },
+        {
+          "rank": 3,
+          "id": "21",
+          "context_id": 8,
+          "distance": 0.3740168809890747,
+          "text": "dilation of blood vessels associated with inflammation, and leukotrienes that attract certain white blood cells (leukocytes). Common cytokines include interleukins that are responsible for communication between white blood cells; chemokines that promote chemotaxis; and interferons that have anti-viral effects, such as shutting down protein synthesis in the host cell. Growth factors and cytotoxic factors may also be released. These cytokines and other chemicals recruit immune cells to the site of"
+        }
+      ]
+    },
+    {
+      "question_id": "57302bd0b2c2fd14005689de",
+      "question": "How many people did the Islamic State control the territory of as of March 2015?",
+      "question_word_count": 15,
+      "gold_context_id": 35,
+      "reference_answers": [
+        "ten million",
+        "ten million",
+        "ten million"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "88",
+          "context_id": 35,
+          "distance": 0.2599162459373474,
+          "text": "the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims worldwide. As of March 2015[update], it had control over territory occupied by ten million people in Iraq and Syria, and has nominal control over small areas of Libya, Nigeria and Afghanistan. (While a self-described state, it lacks international recognition.) The group also operates or has affiliates in other parts of the world, including North Africa"
+        },
+        {
+          "rank": 2,
+          "id": "87",
+          "context_id": 35,
+          "distance": 0.333351194858551,
+          "text": "\"The Islamic State\", formerly known as the \"Islamic State of Iraq and the Levant\" and before that as the \"Islamic State of Iraq\", (and called the acronym Daesh by its many detractors), is a Wahhabi/Salafi jihadist extremist militant group which is led by and mainly composed of Sunni Arabs from Iraq and Syria. In 2014, the group proclaimed itself a caliphate, with religious, political and military authority over all Muslims"
+        },
+        {
+          "rank": 3,
+          "id": "56",
+          "context_id": 21,
+          "distance": 0.5396788120269775,
+          "text": "western feudal lords and the Catholic Church. After allying himself with Croatia and the Catholic cities of Dalmatia, in 1081 he led an army of 30,000 men in 300 ships landing on the southern shores of Albania, capturing Valona, Kanina, Jericho (Orikumi), and reaching Butrint after numerous pillages. They joined the fleet that had previously conquered Corfu and attacked Dyrrachium from land and sea, devastating everything along the way. Under"
+        }
+      ]
+    },
+    {
+      "question_id": "57264e2f708984140094c1e3",
+      "question": "How did scientists assess the DNA/RNA of yersinia pestis? ",
+      "question_word_count": 9,
+      "gold_context_id": 45,
+      "reference_answers": [
+        "with Polymerase Chain Reaction (PCR)",
+        "Polymerase Chain Reaction (PCR) techniques",
+        "Polymerase Chain Reaction (PCR) techniques"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "114",
+          "context_id": 45,
+          "distance": 0.24595952033996582,
+          "text": "In October 2010, the open-access scientific journal PLoS Pathogens published a paper by a multinational team who undertook a new investigation into the role of Yersinia pestis in the Black Death following the disputed identification by Drancourt and Raoult in 1998. They assessed the presence of DNA/RNA with Polymerase Chain Reaction (PCR) techniques for Y. pestis from the tooth sockets in human skeletons from mass graves in northern, central and"
+        },
+        {
+          "rank": 2,
+          "id": "115",
+          "context_id": 45,
+          "distance": 0.42169713973999023,
+          "text": "pestis from the tooth sockets in human skeletons from mass graves in northern, central and southern Europe that were associated archaeologically with the Black Death and subsequent resurgences. The authors concluded that this new research, together with prior analyses from the south of France and Germany, \". . . ends the debate about the etiology of the Black Death, and unambiguously demonstrates that Y. pestis was the causative agent of"
+        },
+        {
+          "rank": 3,
+          "id": "116",
+          "context_id": 45,
+          "distance": 0.49802058935165405,
+          "text": "of the Black Death, and unambiguously demonstrates that Y. pestis was the causative agent of the epidemic plague that devastated Europe during the Middle Ages\"."
+        }
+      ]
+    },
+    {
+      "question_id": "5733f410d058e614000b6663",
+      "question": "What was the goal of Braddock's expedition?",
+      "question_word_count": 7,
+      "gold_context_id": 49,
+      "reference_answers": [
+        "dislodge the French",
+        "dislodge the French",
+        "dislodge the French",
+        "dislodge the French"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "125",
+          "context_id": 49,
+          "distance": 0.42206871509552,
+          "text": "Braddock's departure for North America. In response, King Louis XV dispatched six regiments to New France under the command of Baron Dieskau in 1755. The British, intending to blockade French ports, sent out their fleet in February 1755, but the French fleet had already sailed. Admiral Edward Hawke detached a fast squadron to North America in an attempt to intercept the French."
+        },
+        {
+          "rank": 2,
+          "id": "124",
+          "context_id": 49,
+          "distance": 0.4287834167480469,
+          "text": "News of the two battles reached England in August. After several months of negotiations, the government of the Duke of Newcastle decided to send an army expedition the following year to dislodge the French. They chose Major General Edward Braddock to lead the expedition. Word of the British military plans leaked to France well before Braddock's departure for North America. In response, King Louis XV dispatched six regiments to New"
+        },
+        {
+          "rank": 3,
+          "id": "43",
+          "context_id": 17,
+          "distance": 0.4605609178543091,
+          "text": "French Huguenots made two attempts to establish a haven in North America. In 1562, naval officer Jean Ribault led an expedition that explored Florida and the present-day Southeastern U.S., and founded the outpost of Charlesfort on Parris Island, South Carolina. The Wars of Religion precluded a return voyage, and the outpost was abandoned. In 1564, Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony;"
+        }
+      ]
+    },
+    {
+      "question_id": "5725b81b271a42140099d097",
+      "question": "Which name is also used to describe the Amazon rainforest in English?",
+      "question_word_count": 12,
+      "gold_context_id": 23,
+      "reference_answers": [
+        "also known in English as Amazonia or the Amazon Jungle,",
+        "Amazonia or the Amazon Jungle",
+        "Amazonia"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "62",
+          "context_id": 23,
+          "distance": 0.22132641077041626,
+          "text": "The Amazon rainforest (Portuguese: Floresta Amazônica or Amazônia; Spanish: Selva Amazónica, Amazonía or usually Amazonia; French: Forêt amazonienne; Dutch: Amazoneregenwoud), also known in English as Amazonia or the Amazon Jungle, is a moist broadleaf forest that covers most of the Amazon basin of South America. This basin encompasses 7,000,000 square kilometres (2,700,000 sq mi), of which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes"
+        },
+        {
+          "rank": 2,
+          "id": "64",
+          "context_id": 23,
+          "distance": 0.3240789771080017,
+          "text": "States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over half of the planet's remaining rainforests, and comprises the largest and most biodiverse tract of tropical rainforest in the world, with an estimated 390 billion individual trees divided into 16,000 species."
+        },
+        {
+          "rank": 3,
+          "id": "63",
+          "context_id": 23,
+          "distance": 0.3445143699645996,
+          "text": "which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes territory belonging to nine nations. The majority of the forest is contained within Brazil, with 60% of the rainforest, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Venezuela, Ecuador, Bolivia, Guyana, Suriname and French Guiana. States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over"
+        }
+      ]
+    },
+    {
+      "question_id": "57264e66dd62a815002e811a",
+      "question": "How do ctenophores control buoyancy?",
+      "question_word_count": 5,
+      "gold_context_id": 52,
+      "reference_answers": [
+        "osmotic pressure",
+        "It is uncertain",
+        "rely on osmotic pressure"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "132",
+          "context_id": 52,
+          "distance": 0.1992415189743042,
+          "text": "It is uncertain how ctenophores control their buoyancy, but experiments have shown that some species rely on osmotic pressure to adapt to water of different densities. Their body fluids are normally as concentrated as seawater. If they enter less dense brackish water, the ciliary rosettes in the body cavity may pump this into the mesoglea to increase its bulk and decrease its density, to avoid sinking. Conversely if they move"
+        },
+        {
+          "rank": 2,
+          "id": "133",
+          "context_id": 52,
+          "distance": 0.4033353924751282,
+          "text": "to increase its bulk and decrease its density, to avoid sinking. Conversely if they move from brackish to full-strength seawater, the rosettes may pump water out of the mesoglea to reduce its volume and increase its density."
+        },
+        {
+          "rank": 3,
+          "id": "21",
+          "context_id": 8,
+          "distance": 0.5349549055099487,
+          "text": "dilation of blood vessels associated with inflammation, and leukotrienes that attract certain white blood cells (leukocytes). Common cytokines include interleukins that are responsible for communication between white blood cells; chemokines that promote chemotaxis; and interferons that have anti-viral effects, such as shutting down protein synthesis in the host cell. Growth factors and cytotoxic factors may also be released. These cytokines and other chemicals recruit immune cells to the site of"
+        }
+      ]
+    },
+    {
+      "question_id": "5737a5931c456719005744e8",
+      "question": "How do centripetal forces act in relation to vectors of velocity?",
+      "question_word_count": 11,
+      "gold_context_id": 15,
+      "reference_answers": [
+        "perpendicular",
+        "perpendicular",
+        "perpendicular",
+        "perpendicular"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "38",
+          "context_id": 15,
+          "distance": 0.2808016538619995,
+          "text": "of the curving path. Such forces act perpendicular to the velocity vector associated with the motion of an object, and therefore do not change the speed of the object (magnitude of the velocity), but only the direction of the velocity vector. The unbalanced force that accelerates an object can be resolved into a component that is perpendicular to the path, and one that is tangential to the path. This yields"
+        },
+        {
+          "rank": 2,
+          "id": "37",
+          "context_id": 15,
+          "distance": 0.2960900068283081,
+          "text": "where is the mass of the object, is the velocity of the object and is the distance to the center of the circular path and is the unit vector pointing in the radial direction outwards from the center. This means that the unbalanced centripetal force felt by any object is always directed toward the center of the curving path. Such forces act perpendicular to the velocity vector associated with the"
+        },
+        {
+          "rank": 3,
+          "id": "39",
+          "context_id": 15,
+          "distance": 0.31559884548187256,
+          "text": "is perpendicular to the path, and one that is tangential to the path. This yields both the tangential force, which accelerates the object by either slowing it down or speeding it up, and the radial (centripetal) force, which changes its direction."
+        }
+      ]
+    },
+    {
+      "question_id": "5725cf3238643c19005acd61",
+      "question": "What is terra preta called?",
+      "question_word_count": 5,
+      "gold_context_id": 11,
+      "reference_answers": [
+        "black earth",
+        "black earth",
+        "black earth"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "27",
+          "context_id": 11,
+          "distance": 0.28732186555862427,
+          "text": "Terra preta (black earth), which is distributed over large areas in the Amazon forest, is now widely accepted as a product of indigenous soil management. The development of this fertile soil allowed agriculture and silviculture in the previously hostile environment; meaning that large portions of the Amazon rainforest are probably the result of centuries of human management, rather than naturally occurring as has previously been supposed. In the region of"
+        },
+        {
+          "rank": 2,
+          "id": "62",
+          "context_id": 23,
+          "distance": 0.4269779920578003,
+          "text": "The Amazon rainforest (Portuguese: Floresta Amazônica or Amazônia; Spanish: Selva Amazónica, Amazonía or usually Amazonia; French: Forêt amazonienne; Dutch: Amazoneregenwoud), also known in English as Amazonia or the Amazon Jungle, is a moist broadleaf forest that covers most of the Amazon basin of South America. This basin encompasses 7,000,000 square kilometres (2,700,000 sq mi), of which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes"
+        },
+        {
+          "rank": 3,
+          "id": "64",
+          "context_id": 23,
+          "distance": 0.47036051750183105,
+          "text": "States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over half of the planet's remaining rainforests, and comprises the largest and most biodiverse tract of tropical rainforest in the world, with an estimated 390 billion individual trees divided into 16,000 species."
+        }
+      ]
+    },
+    {
+      "question_id": "5728e07e3acd2414000e00e9",
+      "question": "What is a simple form of civil disobedience?",
+      "question_word_count": 8,
+      "gold_context_id": 48,
+      "reference_answers": [
+        "disobedience of laws",
+        "Non-revolutionary civil disobedience",
+        "Non-revolutionary civil disobedience",
+        "Non-revolutionary",
+        "cultural revolution"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "121",
+          "context_id": 48,
+          "distance": 0.2045825719833374,
+          "text": "Non-revolutionary civil disobedience is a simple disobedience of laws on the grounds that they are judged \"wrong\" by an individual conscience, or as part of an effort to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue. Revolutionary civil disobedience is more of an active attempt to overthrow a government (or to change cultural traditions, social customs, religious"
+        },
+        {
+          "rank": 2,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.3039097785949707,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        },
+        {
+          "rank": 3,
+          "id": "122",
+          "context_id": 48,
+          "distance": 0.36077582836151123,
+          "text": "an active attempt to overthrow a government (or to change cultural traditions, social customs, religious beliefs, etc...revolution doesn't have to be political, i.e. \"cultural revolution\", it simply implies sweeping and widespread change to a section of the social fabric). Gandhi's acts have been described as revolutionary civil disobedience. It has been claimed that the Hungarians under Ferenc Deák directed revolutionary civil disobedience against the Austrian government. Thoreau also wrote of"
+        }
+      ]
+    },
+    {
+      "question_id": "5733d249d058e614000b6333",
+      "question": "Where was France concentraing efforts?",
+      "question_word_count": 5,
+      "gold_context_id": 24,
+      "reference_answers": [
+        "against Prussia and its allies in the European theatre of the war.",
+        "Prussia",
+        "against Prussia and its allies",
+        "European theatre",
+        "Prussia"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "66",
+          "context_id": 24,
+          "distance": 0.43168652057647705,
+          "text": "unwilling to risk large convoys to aid the limited forces it had in New France. France concentrated its forces against Prussia and its allies in the European theatre of the war. Between 1758 and 1760, the British military launched a campaign to capture the Colony of Canada. They succeeded in capturing territory in surrounding colonies and ultimately Quebec. Though the British were later defeated at Sainte Foy in Quebec, the"
+        },
+        {
+          "rank": 2,
+          "id": "43",
+          "context_id": 17,
+          "distance": 0.4642612934112549,
+          "text": "French Huguenots made two attempts to establish a haven in North America. In 1562, naval officer Jean Ribault led an expedition that explored Florida and the present-day Southeastern U.S., and founded the outpost of Charlesfort on Parris Island, South Carolina. The Wars of Religion precluded a return voyage, and the outpost was abandoned. In 1564, Ribault's former lieutenant René Goulaine de Laudonnière launched a second voyage to build a colony;"
+        },
+        {
+          "rank": 3,
+          "id": "125",
+          "context_id": 49,
+          "distance": 0.4867696166038513,
+          "text": "Braddock's departure for North America. In response, King Louis XV dispatched six regiments to New France under the command of Baron Dieskau in 1755. The British, intending to blockade French ports, sent out their fleet in February 1755, but the French fleet had already sailed. Admiral Edward Hawke detached a fast squadron to North America in an attempt to intercept the French."
+        }
+      ]
+    },
+    {
+      "question_id": "57377aac1c4567190057447c",
+      "question": "What type of measurements result under Schrodinger equations when using operators instead of Newtonian variables?",
+      "question_word_count": 15,
+      "gold_context_id": 34,
+      "reference_answers": [
+        "quantized",
+        "operators",
+        "quantized",
+        "quantized",
+        "quantized"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "85",
+          "context_id": 34,
+          "distance": 0.26170623302459717,
+          "text": "The notion \"force\" keeps its meaning in quantum mechanics, though one is now dealing with operators instead of classical variables and though the physics is now described by the Schrödinger equation instead of Newtonian equations. This has the consequence that the results of a measurement are now sometimes \"quantized\", i.e. they appear in discrete portions. This is, of course, difficult to imagine in the context of \"forces\". However, the potentials"
+        },
+        {
+          "rank": 2,
+          "id": "86",
+          "context_id": 34,
+          "distance": 0.4176296591758728,
+          "text": "This is, of course, difficult to imagine in the context of \"forces\". However, the potentials V(x,y,z) or fields, from which the forces generally can be derived, are treated similar to classical position variables, i.e., ."
+        },
+        {
+          "rank": 3,
+          "id": "30",
+          "context_id": 12,
+          "distance": 0.5002535581588745,
+          "text": "such questions is given by the time and space hierarchy theorems respectively. They are called hierarchy theorems because they induce a proper hierarchy on the classes defined by constraining the respective resources. Thus there are pairs of complexity classes such that one is properly included in the other. Having deduced such proper set inclusions, we can proceed to make quantitative statements about how much more additional time or space is"
+        }
+      ]
+    },
+    {
+      "question_id": "5729e2316aef0514001550c6",
+      "question": "How many nations are within the Amazon Basin?",
+      "question_word_count": 8,
+      "gold_context_id": 23,
+      "reference_answers": [
+        "nine nations",
+        "nine",
+        "nine"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 2,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "64",
+          "context_id": 23,
+          "distance": 0.25960516929626465,
+          "text": "States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over half of the planet's remaining rainforests, and comprises the largest and most biodiverse tract of tropical rainforest in the world, with an estimated 390 billion individual trees divided into 16,000 species."
+        },
+        {
+          "rank": 2,
+          "id": "63",
+          "context_id": 23,
+          "distance": 0.2627559304237366,
+          "text": "which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes territory belonging to nine nations. The majority of the forest is contained within Brazil, with 60% of the rainforest, followed by Peru with 13%, Colombia with 10%, and with minor amounts in Venezuela, Ecuador, Bolivia, Guyana, Suriname and French Guiana. States or departments in four nations contain \"Amazonas\" in their names. The Amazon represents over"
+        },
+        {
+          "rank": 3,
+          "id": "62",
+          "context_id": 23,
+          "distance": 0.2978818416595459,
+          "text": "The Amazon rainforest (Portuguese: Floresta Amazônica or Amazônia; Spanish: Selva Amazónica, Amazonía or usually Amazonia; French: Forêt amazonienne; Dutch: Amazoneregenwoud), also known in English as Amazonia or the Amazon Jungle, is a moist broadleaf forest that covers most of the Amazon basin of South America. This basin encompasses 7,000,000 square kilometres (2,700,000 sq mi), of which 5,500,000 square kilometres (2,100,000 sq mi) are covered by the rainforest. This region includes"
+        }
+      ]
+    },
+    {
+      "question_id": "572a1ba46aef05140015528f",
+      "question": "How is unregistered property held in informal form?",
+      "question_word_count": 8,
+      "gold_context_id": 13,
+      "reference_answers": [
+        "through various associations and other arrangements",
+        "through various associations and other arrangements",
+        "through various associations"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "32",
+          "context_id": 13,
+          "distance": 0.2886000871658325,
+          "text": "In many poor and developing countries much land and housing is held outside the formal or legal property ownership registration system. Much unregistered property is held in informal form through various associations and other arrangements. Reasons for extra-legal ownership include excessive bureaucratic red tape in buying property and building, In some countries it can take over 200 steps and up to 14 years to build on government land. Other causes"
+        },
+        {
+          "rank": 2,
+          "id": "33",
+          "context_id": 13,
+          "distance": 0.40712684392929077,
+          "text": "over 200 steps and up to 14 years to build on government land. Other causes of extra-legal property are failures to notarize transaction documents or having documents notarized but failing to have them recorded with the official agency."
+        },
+        {
+          "rank": 3,
+          "id": "90",
+          "context_id": 36,
+          "distance": 0.5079084634780884,
+          "text": "In cases where the criminalized behavior is pure speech, civil disobedience can consist simply of engaging in the forbidden speech. An example would be WBAI's broadcasting the track \"Filthy Words\" from a George Carlin comedy album, which eventually led to the 1978 Supreme Court case of FCC v. Pacifica Foundation. Threatening government officials is another classic way of expressing defiance toward the government and unwillingness to stand for its policies."
+        }
+      ]
+    },
+    {
+      "question_id": "572fe41e04bcaa1900d76e4f",
+      "question": "The Rhine forms the border between Austria and what other country? ",
+      "question_word_count": 11,
+      "gold_context_id": 46,
+      "reference_answers": [
+        "Switzerland",
+        "Switzerland",
+        "Liechtenstein",
+        "Switzerland",
+        "Switzerland"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "118",
+          "context_id": 46,
+          "distance": 0.37779700756073,
+          "text": "Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it from flowing into the open Seeztal valley and then through Lake Walen and Lake Zurich into the river Aare. The Alpine Rhine begins in the most western part of the Swiss canton of Graubünden, and later forms the border between Switzerland to the West and Liechtenstein and later Austria to the East."
+        },
+        {
+          "rank": 2,
+          "id": "117",
+          "context_id": 46,
+          "distance": 0.426693320274353,
+          "text": "Near Tamins-Reichenau the Anterior Rhine and the Posterior Rhine join and form the Rhine. The river makes a distinctive turn to the north near Chur. This section is nearly 86 km long, and descends from a height of 599 m to 396 m. It flows through a wide glacial alpine valley known as the Rhine Valley (German: Rheintal). Near Sargans a natural dam, only a few metres high, prevents it"
+        },
+        {
+          "rank": 3,
+          "id": "73",
+          "context_id": 27,
+          "distance": 0.4906911849975586,
+          "text": "20th Century fundamentally. Currently Rhine water runs into the sea, or into former marine bays now separated from the sea, in five places, namely at the mouths of the Nieuwe Merwede, Nieuwe Waterway (Nieuwe Maas), Dordtse Kil, Spui and IJssel."
+        }
+      ]
+    },
+    {
+      "question_id": "572a0b0b6aef0514001551f6",
+      "question": "Tumors that are able to evade the body's immune response can become what?",
+      "question_word_count": 13,
+      "gold_context_id": 9,
+      "reference_answers": [
+        "cancers",
+        "cancers",
+        "cancers"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "23",
+          "context_id": 9,
+          "distance": 0.24345111846923828,
+          "text": "Clearly, some tumors evade the immune system and go on to become cancers. Tumor cells often have a reduced number of MHC class I molecules on their surface, thus avoiding detection by killer T cells. Some tumor cells also release products that inhibit the immune response; for example by secreting the cytokine TGF-β, which suppresses the activity of macrophages and lymphocytes. In addition, immunological tolerance may develop against tumor antigens,"
+        },
+        {
+          "rank": 2,
+          "id": "24",
+          "context_id": 9,
+          "distance": 0.35411572456359863,
+          "text": "the activity of macrophages and lymphocytes. In addition, immunological tolerance may develop against tumor antigens, so the immune system no longer attacks the tumor cells."
+        },
+        {
+          "rank": 3,
+          "id": "110",
+          "context_id": 43,
+          "distance": 0.3882530927658081,
+          "text": "Overactive immune responses comprise the other end of immune dysfunction, particularly the autoimmune disorders. Here, the immune system fails to properly distinguish between self and non-self, and attacks part of the body. Under normal circumstances, many T cells and antibodies react with \"self\" peptides. One of the functions of specialized cells (located in the thymus and bone marrow) is to present young lymphocytes with self antigens produced throughout the body"
+        }
+      ]
+    },
+    {
+      "question_id": "5706139252bb891400689867",
+      "question": "How many campuses does the University of California have?",
+      "question_word_count": 9,
+      "gold_context_id": 20,
+      "reference_answers": [
+        "5",
+        "5",
+        "5"
+      ],
+      "context_hit_rank": 1,
+      "evidence_hit_rank": 1,
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "id": "52",
+          "context_id": 20,
+          "distance": 0.3006094694137573,
+          "text": "The Tech Coast is a moniker that has gained use as a descriptor for the region's diversified technology and industrial base as well as its multitude of prestigious and world-renowned research universities and other public and private institutions. Amongst these include 5 University of California campuses (Irvine, Los Angeles, Riverside, Santa Barbara, and San Diego); 12 California State University campuses (Bakersfield, Channel Islands, Dominguez Hills, Fullerton, Los Angeles, Long Beach,"
+        },
+        {
+          "rank": 2,
+          "id": "53",
+          "context_id": 20,
+          "distance": 0.31395095586776733,
+          "text": "12 California State University campuses (Bakersfield, Channel Islands, Dominguez Hills, Fullerton, Los Angeles, Long Beach, Northridge, Pomona, San Bernardino, San Diego, San Marcos, and San Luis Obispo); and private institutions such as the California Institute of Technology, Chapman University, the Claremont Colleges (Claremont McKenna College, Harvey Mudd College, Pitzer College, Pomona College, and Scripps College), Loma Linda University, Loyola Marymount University, Occidental College, Pepperdine University, University of Redlands, University of"
+        },
+        {
+          "rank": 3,
+          "id": "54",
+          "context_id": 20,
+          "distance": 0.417255163192749,
+          "text": "Loma Linda University, Loyola Marymount University, Occidental College, Pepperdine University, University of Redlands, University of San Diego, and the University of Southern California."
+        }
+      ]
+    }
+  ]
+}
