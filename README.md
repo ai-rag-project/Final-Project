@@ -4,6 +4,22 @@ A lightweight course project for **T-05: Retrieval-Augmented Generation and the 
 
 This project studies a RAG pipeline by evaluating its retrieval and generation components separately. The current version implements a reproducible dense-retrieval baseline; generator integration and end-to-end hallucination evaluation are still in progress.
 
+## Table of Contents
+
+- [Project Question](#project-question)
+- [Dataset](#dataset)
+- [Retrieval Baseline](#retrieval-baseline)
+- [Current Retrieval Results](#current-retrieval-results)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Data Preparation](#data-preparation)
+- [Retrieval Evaluation](#retrieval-evaluation)
+- [Interactive Retrieval Demo](#interactive-retrieval-demo)
+- [Evaluation Plan](#evaluation-plan)
+- [Current Limitations](#current-limitations)
+- [Report](#report)
+- [Team](#team)
+
 ## Project Question
 
 How well can a lightweight RAG system retrieve answer evidence from a small document collection and avoid unsupported answers when sufficient evidence is unavailable?
@@ -134,6 +150,38 @@ python -m pip install -r requirements.txt
 ```
 
 The embedding model is downloaded automatically from Hugging Face on the first run. No API key is required.
+
+### Local Generator (Ollama)
+
+Answer generation runs on a local model served by [Ollama](https://ollama.com) — no API key or external service required.
+
+1. Install Ollama:
+
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+
+   On Windows or macOS, use the installer from [ollama.com/download](https://ollama.com/download).
+
+2. Pull the model used by this project (`qwen2.5:3b`):
+
+   ```bash
+   ollama pull qwen2.5:3b
+   ```
+
+3. Make sure the Ollama service is running. It is installed as a background service by default; if it isn't running, start it manually:
+
+   ```bash
+   ollama serve
+   ```
+
+4. Once the model is pulled and Ollama is running, start the project:
+
+   ```bash
+   python main.py
+   ```
+
+The model name can be changed by passing a different `model` argument to `generate_answer` in `rag_engine/agent/rag_agent.py`.
 
 ## Data Preparation
 
