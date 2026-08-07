@@ -10,3 +10,6 @@ pandas
 pydantic
 pydantic-settings
 python-dotenv
+
+# CLI
+rich
