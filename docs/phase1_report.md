@@ -14,10 +14,11 @@ when the available text does not contain an answer?
 
 The project studies the two main parts of a RAG pipeline separately. First, we
 measure whether the retriever finds a chunk that contains the correct answer.
-After the generator is connected, we will measure whether it uses the retrieved
-evidence correctly and returns `UNANSWERABLE` when the evidence is not enough.
-This separation helps us understand whether an incorrect final answer was
-caused by retrieval or generation.
+The retriever is now connected to a local generator, and Phase 2 will measure
+whether the generator uses the retrieved evidence correctly and returns
+`UNANSWERABLE` when the evidence is not enough. This separation helps us
+understand whether an incorrect final answer was caused by retrieval or
+generation.
 
 ## 2. Dataset Description
 
@@ -95,10 +96,11 @@ Question
    -> answer or UNANSWERABLE
 ```
 
-The generator is being integrated by another team member. It will receive only
-the question and the three retrieved chunks. It will be instructed to answer
-from those chunks and return exactly `UNANSWERABLE` when they do not provide
-enough evidence. No model is trained from scratch and no fine-tuning is used.
+The generator uses the pretrained `qwen2.5:3b` model through a local Ollama
+service. It receives the question and the three retrieved chunks, and its prompt
+instructs it to answer only from those chunks or return exactly `UNANSWERABLE`
+when they do not provide enough evidence. The end-to-end pipeline is available
+through `main.py`. No model is trained from scratch and no fine-tuning is used.
 
 The retrieval baseline can be reproduced from the repository root with:
 
@@ -106,6 +108,14 @@ The retrieval baseline can be reproduced from the repository root with:
 python -m pip install -r requirements.txt
 python rag_engine/data/prepare_data.py
 python rag_engine/evaluation/evaluate_retrieval.py
+```
+
+To run the current end-to-end demo, Ollama must be running locally and the
+generator model must be available:
+
+```powershell
+ollama pull qwen2.5:3b
+python main.py
 ```
 
 The evaluator clears and rebuilds a separate ChromaDB collection named
@@ -116,7 +126,7 @@ the result. Detailed results are saved in
 As an initial reproducibility check, the evaluator was run on the 50 answerable
 questions. Evidence Recall@3 was 0.98, so answer evidence was found for 49 of 50
 questions. This is an initial baseline check; the complete end-to-end results
-will be reported in Phase 2 after the generator is connected.
+will be reported in Phase 2 after generation evaluation is completed.
 
 ## 5. Evaluation Plan
 
@@ -141,11 +151,11 @@ Evidence Recall@3 is the main retrieval metric.
 
 ### 5.2 Answer F1
 
-After the generator is completed, its final answers will be compared with the
-SQuAD reference answers using token-level F1. Before comparison, answers will
-be converted to lowercase and punctuation, English articles, and extra spaces
-will be removed. F1 gives partial credit when the generated answer and a
-reference answer overlap but are not exactly the same.
+The connected generator's final answers will be compared with the SQuAD
+reference answers using token-level F1. Before comparison, answers will be
+converted to lowercase and punctuation, English articles, and extra spaces will
+be removed. F1 gives partial credit when the generated answer and a reference
+answer overlap but are not exactly the same.
 
 The final evaluation will include an answerable versus unanswerable breakdown.
 For the 50 unanswerable questions, returning `UNANSWERABLE` is considered a
