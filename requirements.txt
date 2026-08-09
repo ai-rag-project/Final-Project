@@ -13,3 +13,6 @@ python-dotenv
 
 # CLI
 rich
+
+# Local generation
+requests

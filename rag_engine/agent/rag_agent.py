@@ -128,8 +128,10 @@ class RAGAgent:
         prompt = f"""You are a question-answering assistant. Answer the question using ONLY the information in the context below. Do not use any outside knowledge.
 
         Rules:
-        - If the context does NOT contain enough information, respond with exactly: UNANSWERABLE
-        - Do not use any outside knowledge.
+        - Use only the provided context.
+        - If the context does not contain enough information, return exactly: UNANSWERABLE
+        - Otherwise, return only the shortest answer supported by the context.
+        - Do not include explanations, prefixes, or extra commentary.
 
         Context:
         {context}
@@ -141,11 +143,35 @@ class RAGAgent:
             with console.status("[dim]Generating answer...[/dim]", spinner="dots"):
                 response = requests.post(
                     "http://localhost:11434/api/generate",
-                    json={"model": model, "prompt": prompt, "stream": False},
+                    json={
+                        "model": model,
+                        "prompt": prompt,
+                        "stream": False,
+                        "options": {
+                            "temperature": 0,
+                            "seed": 42,
+                            "num_predict": 64,
+                        },
+                    },
                     timeout=60,
                 )
             response.raise_for_status()
-            return response.json()["response"].strip()
+
+            result = response.json()
+            answer = result.get("response")
+
+            if not isinstance(answer, str) or not answer.strip():
+                raise ValueError(
+                    "Ollama response is missing a valid non-empty 'response' field."
+                )
+
+            answer = answer.strip()
+
+            if answer.upper().rstrip(".") == "UNANSWERABLE":
+                return "UNANSWERABLE"
+
+            return answer
+
         except requests.exceptions.RequestException as e:
             console.print(f"[red][-] Generation failed: {e}[/red]")
             return "GENERATION_ERROR"
