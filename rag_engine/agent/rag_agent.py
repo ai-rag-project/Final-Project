@@ -158,6 +158,8 @@ class RAGAgent:
             response.raise_for_status()
 
             result = response.json()
+            if not isinstance(result, dict):
+                raise ValueError("Ollama response must be a JSON object.")
             answer = result.get("response")
 
             if not isinstance(answer, str) or not answer.strip():
@@ -172,6 +174,6 @@ class RAGAgent:
 
             return answer
 
-        except requests.exceptions.RequestException as e:
+        except (requests.exceptions.RequestException, ValueError) as e:
             console.print(f"[red][-] Generation failed: {e}[/red]")
             return "GENERATION_ERROR"
