@@ -112,31 +112,32 @@ rag_engine/evaluation/generation_results.json
 
 ```text
 Final-Project/
-â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ phase1_report.md
-â”‚   â””â”€â”€ phase2_report.md
-â”œâ”€â”€ rag_engine/
-â”‚   â”œâ”€â”€ agent/
-â”‚   â”‚   â””â”€â”€ rag_agent.py
-â”‚   â”œâ”€â”€ config/
-â”‚   â”‚   â””â”€â”€ config.py
-â”‚   â”œâ”€â”€ data/
-â”‚   â”‚   â”œâ”€â”€ prepare_data.py
-â”‚   â”‚   â”œâ”€â”€ sample_contexts.json
-â”‚   â”‚   â”œâ”€â”€ sample_chunks.json
-â”‚   â”‚   â””â”€â”€ sample_questions.json
-â”‚   â”œâ”€â”€ embedding/
-â”‚   â”‚   â””â”€â”€ embedder.py
-â”‚   â”œâ”€â”€ evaluation/
-â”‚   â”‚   â”œâ”€â”€ evaluate_retrieval.py
-â”‚   â”‚   â”œâ”€â”€ evaluate_generation.py
-â”‚   â”‚   â”œâ”€â”€ retrieval_results.json
-â”‚   â”‚   â””â”€â”€ generation_results.json
-â”‚   â””â”€â”€ vector_store/
-â”‚       â””â”€â”€ repository.py
-â”œâ”€â”€ main.py
-â”œâ”€â”€ visualize.py
-â””â”€â”€ requirements.txt
+|-- docs/
+|   |-- phase1_report.md
+|   |-- phase2_report.md
+|   `-- phase2_report.pdf
+|-- rag_engine/
+|   |-- agent/
+|   |   `-- rag_agent.py
+|   |-- config/
+|   |   `-- config.py
+|   |-- data/
+|   |   |-- prepare_data.py
+|   |   |-- sample_contexts.json
+|   |   |-- sample_chunks.json
+|   |   `-- sample_questions.json
+|   |-- embedding/
+|   |   `-- embedder.py
+|   |-- evaluation/
+|   |   |-- evaluate_retrieval.py
+|   |   |-- evaluate_generation.py
+|   |   |-- retrieval_results.json
+|   |   `-- generation_results.json
+|   `-- vector_store/
+|       `-- repository.py
+|-- main.py
+|-- visualize.py
+`-- requirements.txt
 ```
 
 ## Installation
