@@ -1,28 +1,28 @@
-# YadYar Lite — RAG and Hallucination Study
+# YadYar Lite - RAG and Hallucination Study
 
 A lightweight course project for **T-05: Retrieval-Augmented Generation and the Study of Hallucination**.
 
-This project studies a RAG pipeline by evaluating its retrieval and generation components separately. The current version implements a reproducible dense-retrieval baseline; generator integration and end-to-end hallucination evaluation are still in progress.
+This project evaluates a local retrieval-augmented generation (RAG) pipeline in two stages: whether the retriever finds answer evidence and whether the generator produces a supported answer or correctly returns `UNANSWERABLE` when the evidence is insufficient.
 
 ## Table of Contents
 
 - [Project Question](#project-question)
 - [Dataset](#dataset)
-- [Retrieval Baseline](#retrieval-baseline)
-- [Current Retrieval Results](#current-retrieval-results)
+- [Baseline System](#baseline-system)
+- [Baseline Results](#baseline-results)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Data Preparation](#data-preparation)
-- [Retrieval Evaluation](#retrieval-evaluation)
-- [Interactive Retrieval Demo](#interactive-retrieval-demo)
-- [Evaluation Plan](#evaluation-plan)
+- [Evaluation](#evaluation)
+- [End-to-End Demo](#end-to-end-demo)
+- [Representative Errors](#representative-errors)
 - [Current Limitations](#current-limitations)
-- [Report](#report)
+- [Reports](#reports)
 - [Team](#team)
 
 ## Project Question
 
-How well can a lightweight RAG system retrieve answer evidence from a small document collection and avoid unsupported answers when sufficient evidence is unavailable?
+How well can a lightweight RAG system find answer evidence in a small document collection, generate answers supported by that evidence, and avoid answering when sufficient evidence is unavailable?
 
 ## Dataset
 
@@ -37,34 +37,38 @@ The project uses a reproducible subset of the **SQuAD 2.0 development set**.
 | Chunk overlap | 15 words |
 | Answerable questions | 50 |
 | Unanswerable questions | 50 |
+| Random seed | 42 |
 
-The preprocessing script uses random seed `42`, making the generated subset reproducible.
+The prepared questions retain their SQuAD IDs, source context IDs, reference answers, and answerability labels.
 
-## Retrieval Baseline
+## Baseline System
 
-The retriever uses:
+The local baseline uses:
 
-- `BAAI/bge-base-en-v1.5` for dense embeddings
-- ChromaDB as the vector store
-- Cosine distance for similarity search
-- `Top-k = 3` retrieved chunks per question
+- `BAAI/bge-base-en-v1.5` for dense embeddings;
+- ChromaDB with cosine distance as the vector store;
+- `Top-k = 3` retrieved chunks per question;
+- `qwen2.5:3b`, served locally through Ollama, for answer generation.
 
-The current pipeline is:
+The complete pipeline is:
 
 ```text
 Question
-   -> Query embedding
-   -> ChromaDB similarity search
-   -> Top-3 retrieved chunks
-   -> Generator (in progress)
-   -> Answer or UNANSWERABLE
+   -> BGE query embedding
+   -> ChromaDB Top-3 retrieval
+   -> Qwen2.5 generation
+   -> answer, UNANSWERABLE, or GENERATION_ERROR
 ```
+
+The generator receives only the question and the three retrieved chunks. Its prompt instructs it to use the supplied evidence, produce a short answer, and return exactly `UNANSWERABLE` when the context is insufficient.
 
 No model is trained from scratch and no fine-tuning is used.
 
-## Current Retrieval Results
+## Baseline Results
 
-The baseline was evaluated on 50 answerable questions.
+### Retrieval
+
+The retriever was evaluated on the 50 answerable questions.
 
 | Metric | Result |
 |---|---:|
@@ -73,47 +77,67 @@ The baseline was evaluated on 50 answerable questions.
 | Evidence Recall@1 | 0.86 |
 | Evidence Recall@3 | **0.98** |
 
-The retriever found answer evidence in the Top-3 chunks for **49 of 50 questions**.
+The retriever found normalized reference-answer evidence in the Top-3 chunks for **49 of 50 answerable questions**.
 
-### Question-Length Breakdown
+#### Question-Length Breakdown
 
-| Question group | Count | Evidence Recall@3 |
-|---|---:|---:|
-| Short questions (`<= 9` words) | 29 | 0.966 |
-| Long questions (`> 9` words) | 21 | 1.000 |
+The median answerable-question length was nine words.
+
+| Question group | Count | Evidence found | Evidence Recall@3 |
+|---|---:|---:|---:|
+| Short (`<= 9` words) | 29 | 28 | 0.966 |
+| Long (`> 9` words) | 21 | 21 | 1.000 |
+
+### Generation
+
+The generator was evaluated on all 100 questions. All generation requests completed successfully.
+
+| Metric | Result | Interpretation |
+|---|---:|---|
+| Answer F1 | **0.6825** | Average token overlap on the 50 answerable questions |
+| Hallucination Rate | **0.44** | 22 of 50 unanswerable questions received a normal answer |
+| Correct Abstention Rate | **0.56** | 28 of 50 unanswerable questions returned `UNANSWERABLE` |
+| Generation Errors | **0** | All 100 requests completed |
+
+Among the 50 answerable questions, the generator produced a normal answer for 46 and incorrectly abstained on 4. Retrieval coverage was strong, but generation and abstention remained the main sources of error.
 
 Detailed results are stored in:
 
 ```text
 rag_engine/evaluation/retrieval_results.json
+rag_engine/evaluation/generation_results.json
 ```
 
 ## Project Structure
 
 ```text
 Final-Project/
-├── docs/
-│   └── phase1_report.md
-├── rag_engine/
-│   ├── agent/
-│   │   └── rag_agent.py
-│   ├── config/
-│   │   └── config.py
-│   ├── data/
-│   │   ├── prepare_data.py
-│   │   ├── sample_contexts.json
-│   │   ├── sample_chunks.json
-│   │   └── sample_questions.json
-│   ├── embedding/
-│   │   └── embedder.py
-│   ├── evaluation/
-│   │   ├── evaluate_retrieval.py
-│   │   └── retrieval_results.json
-│   └── vector_store/
-│       └── repository.py
-├── main.py
-├── visualize.py
-└── requirements.txt
+|-- docs/
+|   |-- phase1_report.md
+|   |-- phase2_report.md
+|   `-- phase2_report.pdf
+|-- rag_engine/
+|   |-- agent/
+|   |   `-- rag_agent.py
+|   |-- config/
+|   |   `-- config.py
+|   |-- data/
+|   |   |-- prepare_data.py
+|   |   |-- sample_contexts.json
+|   |   |-- sample_chunks.json
+|   |   `-- sample_questions.json
+|   |-- embedding/
+|   |   `-- embedder.py
+|   |-- evaluation/
+|   |   |-- evaluate_retrieval.py
+|   |   |-- evaluate_generation.py
+|   |   |-- retrieval_results.json
+|   |   `-- generation_results.json
+|   `-- vector_store/
+|       `-- repository.py
+|-- main.py
+|-- visualize.py
+`-- requirements.txt
 ```
 
 ## Installation
@@ -134,7 +158,13 @@ python -m venv .venv
 Activate it on Windows PowerShell:
 
 ```powershell
-.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
+```
+
+On Windows Command Prompt:
+
+```cmd
+.venv\Scripts\activate.bat
 ```
 
 On Linux or macOS:
@@ -143,45 +173,29 @@ On Linux or macOS:
 source .venv/bin/activate
 ```
 
-Install the dependencies:
+Install the Python dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-The embedding model is downloaded automatically from Hugging Face on the first run. No API key is required.
+The embedding model is downloaded automatically from Hugging Face on the first run. No Hugging Face API token is required.
 
-### Local Generator (Ollama)
+### Local Generator with Ollama
 
-Answer generation runs on a local model served by [Ollama](https://ollama.com) — no API key or external service required.
+Install Ollama from [ollama.com/download](https://ollama.com/download), then pull the model used by this project:
 
-1. Install Ollama:
+```bash
+ollama pull qwen2.5:3b
+```
 
-   ```bash
-   curl -fsSL https://ollama.com/install.sh | sh
-   ```
+Make sure the Ollama service is running. If it is not already running in the background, start it with:
 
-   On Windows or macOS, use the installer from [ollama.com/download](https://ollama.com/download).
+```bash
+ollama serve
+```
 
-2. Pull the model used by this project (`qwen2.5:3b`):
-
-   ```bash
-   ollama pull qwen2.5:3b
-   ```
-
-3. Make sure the Ollama service is running. It is installed as a background service by default; if it isn't running, start it manually:
-
-   ```bash
-   ollama serve
-   ```
-
-4. Once the model is pulled and Ollama is running, start the project:
-
-   ```bash
-   python main.py
-   ```
-
-The model name can be changed by passing a different `model` argument to `generate_answer` in `rag_engine/agent/rag_agent.py`.
+No external generation API key is required.
 
 ## Data Preparation
 
@@ -191,75 +205,85 @@ The prepared dataset files are included in the repository. To reproduce them fro
 python rag_engine/data/prepare_data.py
 ```
 
-This command downloads the original dataset when necessary and regenerates the contexts, chunks, and evaluation questions.
+This command downloads the original dataset when necessary and regenerates the contexts, chunks, and evaluation questions using random seed `42`.
 
-## Retrieval Evaluation
+## Evaluation
 
-Run the retrieval evaluator from the repository root:
+Run both evaluators from the repository root:
 
 ```bash
-python rag_engine/evaluation/evaluate_retrieval.py
+python -m rag_engine.evaluation.evaluate_retrieval
+python -m rag_engine.evaluation.evaluate_generation
 ```
 
-The evaluator:
+The retrieval evaluator rebuilds a separate ChromaDB evaluation collection, processes the 50 answerable questions, prints the retrieval metrics, and saves the per-question results.
 
-1. Loads the prepared chunks and questions.
-2. Rebuilds a separate ChromaDB evaluation collection.
-3. Evaluates the 50 answerable questions.
-4. Prints the metric summary.
-5. Saves detailed results to `retrieval_results.json`.
+The generation evaluator processes all 100 questions, computes Answer F1 and Hallucination Rate, prints the metric summary, and saves the generated answers together with their retrieved chunks.
 
-## Interactive Retrieval Demo
+Generation evaluation requires the local Ollama service and `qwen2.5:3b` model.
 
-Run:
+## End-to-End Demo
+
+After installing the dependencies and pulling the Ollama model, run:
 
 ```bash
 python main.py
 ```
 
-The script:
+The terminal demo:
 
-- embeds and stores the prepared chunks;
-- displays an interactive t-SNE visualization;
-- accepts questions through the terminal;
-- prints the three most relevant retrieved chunks.
+1. embeds and stores the prepared chunks;
+2. accepts a question from the user;
+3. retrieves the three most similar chunks;
+4. displays the retrieved evidence;
+5. generates a final answer, `UNANSWERABLE`, or `GENERATION_ERROR`.
 
-At the current stage, the interactive demo displays retrieved evidence rather than a generated final answer.
+Example supported question:
 
-## Evaluation Plan
+```text
+When did Ribault first establish a settlement in South Carolina?
+```
 
-The completed retrieval stage uses **Evidence Recall@3** as its main metric.
+Expected answer:
 
-After generator integration, the project will additionally measure:
+```text
+1562
+```
 
-- token-level Answer F1;
-- correct abstention on unanswerable questions;
-- hallucination rate;
-- answerable versus unanswerable performance.
+An unrelated question with no supporting evidence should return `UNANSWERABLE`, although the evaluation shows that abstention is not yet reliable in every case.
 
-Representative failures will be grouped into:
+## Representative Errors
 
-1. Retrieval failure
-2. Ignored-evidence hallucination
-3. Absent-evidence hallucination
+Manual review identified several recurring failure patterns:
+
+- ambiguous standalone questions causing retrieval failure;
+- false abstention even when the correct evidence was retrieved;
+- extraction of a nearby phrase instead of the requested value;
+- answering questions that contain a false premise;
+- incorrect handling of negation;
+- token-level F1 mismatches for equivalent forms such as `2` and `two`.
+
+Representative examples and explanations are included in [`docs/phase2_report.md`](docs/phase2_report.md).
 
 ## Current Limitations
 
-- The dataset and evaluation sample are intentionally small.
-- Fixed word-based chunking can split relevant sentences.
-- Evidence matching relies on normalized reference-answer occurrence.
-- The current interactive pipeline does not yet generate final answers.
-- End-to-end hallucination and abstention results require generator integration.
+- The corpus contains only 56 contexts and 100 evaluation questions.
+- Only one embedding model, one generator, one prompt, and `Top-k = 3` were evaluated.
+- Fixed word-based chunking can split sentences or separate useful context.
+- Evidence Recall@3 relies on normalized reference-answer occurrence and may miss paraphrased evidence.
+- Token-level Answer F1 does not recognize every semantically equivalent answer.
+- Hallucination Rate measures failure to abstain on labeled unanswerable questions; it is not an independent factuality check.
+- Some SQuAD questions depend on their original paragraph and are ambiguous as standalone retrieval queries.
+- The system has no separate evidence verifier for contradictions, false premises, or unsupported claims.
 
-## Report
+## Reports
 
-The Phase 1 report is available at:
-
-[`docs/phase1_report.md`](docs/phase1_report.md)
+- [Phase 1 report](docs/phase1_report.md)
+- [Phase 2 report](docs/phase2_report.md)
 
 ## Team
 
 - Taha Amini
 - Eiliya Yavari
 
-Artificial Intelligence and Expert Systems — Spring 1404–1405
+Artificial Intelligence and Expert Systems - Spring 1404-1405
