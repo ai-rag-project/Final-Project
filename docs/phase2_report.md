@@ -99,11 +99,11 @@ Two main metrics are used, with hallucination rate reported as an additional abs
 
 Evidence Recall@3 evaluates retrieval on the 50 answerable questions. A retrieval is successful when at least one normalized reference answer appears in one of the three retrieved chunks.
 
-[
+$$
 \text{Evidence Recall@3} =
 \frac{\text{answerable questions with evidence in Top-3}}
 {\text{all answerable questions}}
-]
+$$
 
 This metric is stricter than checking only the source context ID because a chunk from the correct context may still exclude the sentence containing the answer.
 
@@ -124,11 +124,11 @@ F1 gives partial credit when a generated answer contains only part of the refere
 
 For an unanswerable question, the expected output is `UNANSWERABLE`. Any normal answer generated for such a question is counted as a hallucination.
 
-[
+$$
 \text{Hallucination Rate} =
 \frac{\text{unanswerable questions given a normal answer}}
 {\text{completed unanswerable questions}}
-]
+$$
 
 This is an operational definition for this experiment. It measures failure to abstain, rather than verifying every factual statement in the generated text.
 
@@ -171,9 +171,9 @@ This result does not prove that longer questions are always easier. The sample i
 
 The correct-abstention rate was:
 
-[
+$$
 \frac{28}{50} = 0.56
-]
+$$
 
 Among the 50 answerable questions:
 
