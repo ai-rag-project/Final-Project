@@ -13,10 +13,14 @@ console = Console()
 
 
 class RAGAgent:
-    def __init__(self):
+    def __init__(
+            self,
+            embedder: LocalEmbedder | None = None,
+            db: VectorRepository | None = None,
+    ):
         console.print("[dim][*] Initializing RAG Agent...[/dim]")
-        self.embedder = LocalEmbedder()
-        self.db = VectorRepository()
+        self.embedder = embedder if embedder is not None else LocalEmbedder()
+        self.db = db if db is not None else VectorRepository()
 
     def ingest_data(self, json_path: str = None):
         """
@@ -59,7 +63,12 @@ class RAGAgent:
         )
         console.print("[green][+] Data ingestion complete! DB is ready.[/green]")
 
-    def ask_question(self, question: str, top_k: int = 3) -> List[Dict[str, Any]]:
+    def ask_question(
+            self,
+            question: str,
+            top_k: int = 3,
+            show_table: bool = True,
+    ) -> List[Dict[str, Any]]:
         """
         Embeds the question, retrieves the top_k most similar chunks from ChromaDB,
         and prints a clean summary table (chunk ID + similarity only).
@@ -118,7 +127,8 @@ class RAGAgent:
                 f"[{sim_style}]{sim_display}[/{sim_style}]",
             )
 
-        console.print(table)
+        if show_table:
+            console.print(table)
 
         return formatted_chunks
 
