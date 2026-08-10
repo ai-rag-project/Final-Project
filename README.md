@@ -12,6 +12,7 @@ This project evaluates a local retrieval-augmented generation (RAG) pipeline in 
 - [Baseline Results](#baseline-results)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
+- [Reproducibility](#reproducibility)
 - [Data Preparation](#data-preparation)
 - [Evaluation](#evaluation)
 - [End-to-End Demo](#end-to-end-demo)
@@ -113,6 +114,7 @@ rag_engine/evaluation/generation_results.json
 ```text
 Final-Project/
 |-- docs/
+|   |-- environment.md
 |   |-- phase1_report.md
 |   |-- phase2_report.md
 |   `-- phase2_report.pdf
@@ -137,6 +139,7 @@ Final-Project/
 |       `-- repository.py
 |-- main.py
 |-- visualize.py
+|-- requirements-lock.txt
 `-- requirements.txt
 ```
 
@@ -196,6 +199,23 @@ ollama serve
 ```
 
 No external generation API key is required.
+
+## Reproducibility
+
+The Python package versions used for the reported results are recorded in
+[`requirements-lock.txt`](requirements-lock.txt). The original
+[`requirements.txt`](requirements.txt) contains the direct project
+dependencies in a shorter, readable form.
+
+To recreate the recorded Python package set:
+
+```bash
+python -m pip install -r requirements-lock.txt
+```
+
+The Python version, execution device, embedding model revision, and Ollama
+model details are documented in
+[`docs/environment.md`](docs/environment.md).
 
 ## Data Preparation
 
