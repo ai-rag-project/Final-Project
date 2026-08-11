@@ -217,7 +217,7 @@ This example demonstrates that Answer F1 is useful but imperfect. It measures to
 The experiment has several limitations:
 
 * The corpus contains only 56 contexts and 100 questions, so the results cannot represent all RAG or open-domain question-answering tasks.
-* Only one embedding model, one generator, one prompt, and one value of `Top-k` were evaluated.
+* Only one embedding model, one generator, two prompt variants, and a single retrieval setting (`Top-k = 3`) were evaluated.
 * Fixed word-based chunking may split sentences or separate evidence from useful surrounding information.
 * Evidence Recall@3 depends on normalized reference-answer occurrence and may miss valid paraphrased evidence.
 * Token-level F1 does not recognize all semantically equivalent answers, such as `2` and `two`.
@@ -242,14 +242,19 @@ The `improved` prompt acts as an internal verifier. Before returning an answer, 
 * entity identity, time, or quantity details do not match.
 
 **Comparison Results:**
-When running the evaluator with `--prompt-variant improved`, the system achieved:
-* **Baseline Hallucination Rate:** 0.42 (21 errors)
-* **Improved Hallucination Rate:** 0.08 (4 errors)
-* **Baseline Answer F1:** 0.6831
-* **Improved Answer F1:** 0.4687
+
+The controlled comparison produced the following results:
+
+| Metric | Baseline rerun | Improved prompt |
+| --- | ---: | ---: |
+| Answer F1 | 0.6831 | 0.4687 |
+| Hallucination Rate | 0.42 (21/50) | 0.08 (4/50) |
+| False Abstention Rate | 0.08 (4/50) | 0.40 (20/50) |
+
+**Baseline rerun note:** The main baseline evaluation reported earlier in this report produced an Answer F1 of 0.6825 and a Hallucination Rate of 0.44. For this controlled prompt comparison, the baseline variant was rerun and produced an Answer F1 of 0.6831 and a Hallucination Rate of 0.42. This small difference may reflect minor run-to-run variation in local model generation. Therefore, the improved prompt is compared with the baseline rerun produced by the same comparison workflow, while the original baseline results remain unchanged elsewhere in the report.
 
 **Analysis:**
-The prompt engineering successfully reduced the hallucination rate by 34%, demonstrating that strict verification rules can effectively force the model to abstain from inventing answers. However, this introduced a classic precision-recall trade-off: the model became overly conservative. The Answer F1 score dropped to 0.4687 because the strict verification caused the model to incorrectly abstain (`UNANSWERABLE`) on several answerable questions where the evidence was present but required slight inferential leaps or paraphrase resolution. In an educational context, this conservative behavior—preferring abstention over hallucination—is often the safer design choice.
+The improved prompt reduced the hallucination rate from 0.42 to 0.08, a decrease of 34 percentage points, or approximately 81% relative to the baseline rerun. However, this improvement introduced a substantial hallucination–abstention trade-off. The False Abstention Rate increased from 0.08 (4/50) to 0.40 (20/50), while Answer F1 decreased from 0.6831 to 0.4687. Therefore, the stricter verification rules made the model more conservative: it generated fewer unsupported answers but incorrectly rejected more answerable questions. This behavior may be preferable in educational settings where avoiding unsupported answers is the highest priority, but it should not be interpreted as an improvement across all metrics.
 
 ### 9.2 Query Rewriting or Reranking
 
@@ -257,7 +262,7 @@ Ambiguous questions containing expressions such as “this settlement” could b
 
 This change would mainly target the single observed retrieval failure. Because retrieval already achieved an Evidence Recall@3 of 0.98, improving generation and abstention should remain the higher priority.
 
-These improvements are proposed as Future Work and were not implemented in the current baseline.
+Query rewriting and reranking remain proposed as Future Work and were not implemented or evaluated in this project.
 
 ## 10. Lightweight Demo
 
