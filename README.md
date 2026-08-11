@@ -367,7 +367,7 @@ Representative examples and explanations are included in [`docs/phase2_report.md
 ## Current Limitations
 
 - The corpus contains only 56 contexts and 100 evaluation questions.
-- Only one embedding model, one generator, one prompt, and `Top-k = 3` were evaluated.
+- Only one embedding model, one generator, two prompt variants, and a single retrieval setting (`Top-k = 3`) were evaluated.
 - Fixed word-based chunking can split sentences or separate useful context.
 - Evidence Recall@3 relies on normalized reference-answer occurrence and may miss paraphrased evidence.
 - Token-level Answer F1 does not recognize every semantically equivalent answer.
@@ -386,7 +386,3 @@ Representative examples and explanations are included in [`docs/phase2_report.md
 - Eiliya Yavari
 
 Artificial Intelligence and Expert Systems - Spring 1404-1405
-
-git add README.md
-    rag_engine/evaluation/bootstrap_confidence_intervals.py
-    rag_engine/evaluation/bootstrap_results.json
