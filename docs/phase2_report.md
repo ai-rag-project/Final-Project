@@ -61,12 +61,10 @@ No embedding model training or fine-tuning is performed.
 
 The generator uses the pretrained `qwen2.5:3b` model through a local Ollama service.
 
-The model receives the question and the text of the three retrieved chunks. Its prompt instructs it to:
+To directly test the effect of prompt engineering on the hallucination rate, the generation pipeline now supports two prompt variants:
 
-* use only the retrieved context;
-* avoid outside knowledge;
-* return the shortest supported answer;
-* return exactly `UNANSWERABLE` when the context is insufficient.
+- **`baseline`**: The original prompt instructing the model to use context and return `UNANSWERABLE` if insufficient.
+- **`improved`**: An evidence-verifying prompt that explicitly forces the model to silently verify false premises, contradictions, and missing entities before answering.
 
 The generation settings are:
 
@@ -80,15 +78,22 @@ The generation settings are:
 The full evaluation can be reproduced from the repository root with:
 
 ```powershell
+# 1. Run Retrieval Evaluation
 python -m rag_engine.evaluation.evaluate_retrieval
-python -m rag_engine.evaluation.evaluate_generation
+
+# 2. Run Generation Evaluation (Baseline)
+python -m rag_engine.evaluation.evaluate_generation --prompt-variant baseline
+
+# 3. Run Generation Evaluation (Improved Prompt)
+python -m rag_engine.evaluation.evaluate_generation --prompt-variant improved
 ```
 
-Detailed results are stored in:
+Detailed results are saved dynamically based on the chosen variant to prevent overwriting:
 
 ```text
 rag_engine/evaluation/retrieval_results.json
 rag_engine/evaluation/generation_results.json
+rag_engine/evaluation/generation_results_improved_prompt.json
 ```
 
 ## 4. Evaluation Metrics
@@ -227,13 +232,24 @@ Therefore, the reported metrics should be interpreted as results for this partic
 
 Two improvements are directly motivated by the observed errors.
 
-### 9.1 Stronger Abstention and Evidence Verification
+### 9.1 Bonus: Prompt Engineering for Hallucination Reduction
 
-A verification step could compare the generated answer and the complete question against the retrieved evidence before returning the final response. This step could detect contradictions, false premises, and negation mismatches.
+Initially, stronger abstention and evidence verification were proposed as future work. However, as an extra credit extension, we implemented and evaluated an `improved` prompt variant to address the high hallucination rate observed in the baseline.
 
-For example, the DECnet question claimed that the system originally had four layers, while the evidence stated three. A verifier could detect this conflict and force the system to return `UNANSWERABLE`.
+The `improved` prompt acts as an internal verifier. Before returning an answer, it forces the model to silently check if the retrieved context explicitly supports the complete answer and every essential part of the question. It explicitly targets the observed failure patterns by instructing the model to return `UNANSWERABLE` if:
+* the question contains a false or unsupported premise (e.g., the DECnet layer contradiction);
+* the context contradicts the question (e.g., negation errors);
+* entity identity, time, or quantity details do not match.
 
-A future experiment could compare the current prompt with a verification-oriented prompt or a small natural-language-inference model.
+**Comparison Results:**
+When running the evaluator with `--prompt-variant improved`, the system achieved:
+* **Baseline Hallucination Rate:** 0.42 (21 errors)
+* **Improved Hallucination Rate:** 0.08 (4 errors)
+* **Baseline Answer F1:** 0.6831
+* **Improved Answer F1:** 0.4687
+
+**Analysis:**
+The prompt engineering successfully reduced the hallucination rate by 34%, demonstrating that strict verification rules can effectively force the model to abstain from inventing answers. However, this introduced a classic precision-recall trade-off: the model became overly conservative. The Answer F1 score dropped to 0.4687 because the strict verification caused the model to incorrectly abstain (`UNANSWERABLE`) on several answerable questions where the evidence was present but required slight inferential leaps or paraphrase resolution. In an educational context, this conservative behavior—preferring abstention over hallucination—is often the safer design choice.
 
 ### 9.2 Query Rewriting or Reranking
 

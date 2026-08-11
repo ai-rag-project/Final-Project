@@ -3,7 +3,7 @@
     "questions_file": "rag_engine/data/sample_questions.json",
     "chunks_file": "rag_engine/data/sample_chunks.json",
     "model": "qwen2.5:3b",
-    "prompt_variant": "baseline",
+    "prompt_variant": "improved",
     "collection": "rag_generation_evaluation",
     "top_k": 3
   },
@@ -18,9 +18,9 @@
     "completed_answerable_questions": 50,
     "completed_unanswerable_questions": 50,
     "generation_errors": 0,
-    "answer_f1": 0.6831,
-    "hallucination_count": 21,
-    "hallucination_rate": 0.42
+    "answer_f1": 0.4687,
+    "hallucination_count": 4,
+    "hallucination_rate": 0.08
   },
   "questions": [
     {
@@ -66,9 +66,9 @@
       "question": "What did Lawrence Roberts suggest the system be used for?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "use in the ARPANET",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "12",
@@ -188,7 +188,7 @@
         "the Pakistan movement",
         "Pakistan movement"
       ],
-      "prediction": "Pakistan movement",
+      "prediction": "the Pakistan movement",
       "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -306,9 +306,9 @@
         "Wahhabi/Salafi jihadist extremist militant group",
         "extremist militant"
       ],
-      "prediction": "jihadist extremist militant",
-      "answer_f1": 0.8571428571428571,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "87",
@@ -462,9 +462,9 @@
         "War of the Two Capitals",
         "the War of the Two Capitals"
       ],
-      "prediction": "War of the Two Capitals",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "49",
@@ -584,7 +584,7 @@
         "The time and space hierarchy theorems",
         "time and space hierarchy theorems"
       ],
-      "prediction": "time and space hierarchy theorems",
+      "prediction": "The time and space hierarchy theorems",
       "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -626,9 +626,9 @@
         "increase its bulk and decrease its density",
         "increase its bulk and decrease its density"
       ],
-      "prediction": "increase its bulk and decrease its density",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "133",
@@ -668,9 +668,9 @@
         "2001",
         "2001"
       ],
-      "prediction": "2001",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "120",
@@ -754,9 +754,9 @@
         "Private Bill",
         "Private Bill Committees"
       ],
-      "prediction": "Private Bill Committee",
-      "answer_f1": 0.8,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "71",
@@ -878,7 +878,7 @@
       "question": "Originally built with four layers, how many layers did DEC evolve to have?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "seven",
+      "prediction": "Seven",
       "answer_f1": null,
       "outcome": "hallucination",
       "retrieved_chunks": [
@@ -958,7 +958,7 @@
       "question": "How did King Louis X respond to British plans?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Dispatched six regiments to New France",
+      "prediction": "King Louis XV dispatched six regiments to New France.",
       "answer_f1": null,
       "outcome": "hallucination",
       "retrieved_chunks": [
@@ -996,9 +996,9 @@
       "question": "What did Ghandi think that using your conscience accomplished?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "civil disobedience",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "122",
@@ -1072,9 +1072,9 @@
       "question": "What was the average duty of a concept engine?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "17",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "25",
@@ -1110,9 +1110,9 @@
       "question": "Which study suggests that previous estimates were overstated?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "IPCC",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "119",
@@ -1152,9 +1152,9 @@
         "a suite of network protocols created by Digital Equipment Corporation",
         "suite of network protocols created by Digital Equipment Corporation"
       ],
-      "prediction": "A suite of network protocols",
-      "answer_f1": 0.6153846153846153,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "138",
@@ -1228,9 +1228,9 @@
       "question": "Who was Old France's governor?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Marquis de Vaudreuil",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "92",
@@ -1270,7 +1270,7 @@
         "subsequent long-run economic growth",
         "long-run economic growth"
       ],
-      "prediction": "economic growth",
+      "prediction": "Economic growth",
       "answer_f1": 0.8,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -1312,9 +1312,9 @@
         "7 million",
         "7 million"
       ],
-      "prediction": "7 million",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "26",
@@ -1432,9 +1432,9 @@
         "t to render certain laws ineffective, to cause their repeal, or to exert pressure to get one's political wishes on some other issue",
         "to render certain laws ineffective,"
       ],
-      "prediction": "To exert pressure to get one's political wishes.",
-      "answer_f1": 0.5333333333333333,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "121",
@@ -1470,9 +1470,9 @@
       "question": "What is Polish for \"female\"?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "femina",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "113",
@@ -1594,9 +1594,9 @@
       "question": "Policies which try to control unemployment support economic growth because they increase what?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "equality",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "106",
@@ -1636,8 +1636,8 @@
         "whether the bill is within the legislative competence of the Parliament",
         "whether the bill is within the legislative competence of the Parliament"
       ],
-      "prediction": "general principles",
-      "answer_f1": 0.0,
+      "prediction": "Statements from the Presiding Officer and the member in charge of the bill also indicate whether the bill is within the legislative competence of the Parliament.",
+      "answer_f1": 0.5714285714285715,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -1719,7 +1719,7 @@
         "duty",
         "duty"
       ],
-      "prediction": "duty",
+      "prediction": "Duty",
       "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -1762,8 +1762,8 @@
         "Chur",
         "Chur"
       ],
-      "prediction": "Chur",
-      "answer_f1": 1.0,
+      "prediction": "Near Chur",
+      "answer_f1": 0.6666666666666666,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -1800,9 +1800,9 @@
       "question": "What happens when the immune system loses tolerance for tumor antigens?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "It no longer attacks the tumor cells.",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "24",
@@ -2188,9 +2188,9 @@
       "question": "What Mongolian system did Kublai's government uncompromise with?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Patrimonial feudalism",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "0",
@@ -2226,9 +2226,9 @@
       "question": "What is submitted to only part of Parliament for a full debate?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Stage 1",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "103",
@@ -2268,9 +2268,9 @@
         "1562",
         "1564"
       ],
-      "prediction": "1562",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "43",
@@ -2310,9 +2310,9 @@
         "DTIME(n2)",
         "DTIME(n2)"
       ],
-      "prediction": "DTIME(n)",
+      "prediction": "UNANSWERABLE",
       "answer_f1": 0.0,
-      "outcome": "answered",
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "29",
@@ -2430,9 +2430,9 @@
       "question": "What are two reasons a student would be able to get a scholarship for a public school?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Financial need, talent",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "19",
@@ -2472,9 +2472,9 @@
         "single",
         "a single MHC:antigen molecule"
       ],
-      "prediction": "1",
+      "prediction": "UNANSWERABLE",
       "answer_f1": 0.0,
-      "outcome": "answered",
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "135",
@@ -2672,9 +2672,9 @@
       "question": "What used to be described by the Schrodinger equation?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Newtonian equations",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "85",
@@ -2754,8 +2754,8 @@
         "sending an email",
         "sending an email to the Lebanon"
       ],
-      "prediction": "Sending an email expressing defiance against the Lebanon, New Hampshire city councilors.",
-      "answer_f1": 0.7777777777777777,
+      "prediction": "Wise up or die.",
+      "answer_f1": 0.0,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -2792,9 +2792,9 @@
       "question": "What does not define a bigger set of problems?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "DTIME(n) is not contained in DTIME(n2).",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "13",
@@ -2836,7 +2836,7 @@
         "almost half",
         "half"
       ],
-      "prediction": "almost half",
+      "prediction": "Almost half",
       "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -2874,9 +2874,9 @@
       "question": "What type of insect employs the use of Magicicadas in its evolutionary strategy?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Cicada",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "15",
@@ -3194,9 +3194,9 @@
       "question": "What does decreasing inequality harm?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "economic growth",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "105",
@@ -3275,9 +3275,9 @@
         "dislodge the French",
         "dislodge the French"
       ],
-      "prediction": "To dislodge the French",
-      "answer_f1": 0.8,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "125",
@@ -3317,8 +3317,8 @@
         "Amazonia or the Amazon Jungle",
         "Amazonia"
       ],
-      "prediction": "Jungle",
-      "answer_f1": 0.4,
+      "prediction": "Amazonia",
+      "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -3359,9 +3359,9 @@
         "It is uncertain",
         "rely on osmotic pressure"
       ],
-      "prediction": "osmotic pressure",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "132",
@@ -3402,8 +3402,8 @@
         "perpendicular",
         "perpendicular"
       ],
-      "prediction": "radially inward.",
-      "answer_f1": 0.0,
+      "prediction": "Perpendicular",
+      "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -3444,9 +3444,9 @@
         "black earth",
         "black earth"
       ],
-      "prediction": "Terra Preta",
+      "prediction": "UNANSWERABLE",
       "answer_f1": 0.0,
-      "outcome": "answered",
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "27",
@@ -3488,8 +3488,8 @@
         "Non-revolutionary",
         "cultural revolution"
       ],
-      "prediction": "Simple speech defiance.",
-      "answer_f1": 0.0,
+      "prediction": "Simple forms of civil disobedience include engaging in pure speech, such as broadcasting forbidden content like \"Filthy Words,\" and threatening government officials.",
+      "answer_f1": 0.16,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -3532,8 +3532,8 @@
         "European theatre",
         "Prussia"
       ],
-      "prediction": "European theatre",
-      "answer_f1": 1.0,
+      "prediction": "European theatre of the war",
+      "answer_f1": 0.6666666666666666,
       "outcome": "answered",
       "retrieved_chunks": [
         {
@@ -3614,9 +3614,9 @@
         "quantized",
         "quantized"
       ],
-      "prediction": "Quantized",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "85",
@@ -3698,9 +3698,9 @@
         "through various associations and other arrangements",
         "through various associations"
       ],
-      "prediction": "through various associations and other arrangements",
-      "answer_f1": 1.0,
-      "outcome": "answered",
+      "prediction": "UNANSWERABLE",
+      "answer_f1": 0.0,
+      "outcome": "false_abstention",
       "retrieved_chunks": [
         {
           "id": "32",
@@ -3742,7 +3742,7 @@
         "Switzerland",
         "Switzerland"
       ],
-      "prediction": "Liechtenstein",
+      "prediction": "Switzerland",
       "answer_f1": 1.0,
       "outcome": "answered",
       "retrieved_chunks": [
@@ -3780,9 +3780,9 @@
       "question": "Which IPCC sessions are open to everyone?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Workshops",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "7",
@@ -4016,9 +4016,9 @@
       "question": "What is a product of foreign soil management?",
       "is_answerable": false,
       "reference_answers": [],
-      "prediction": "Terra preta",
+      "prediction": "UNANSWERABLE",
       "answer_f1": null,
-      "outcome": "hallucination",
+      "outcome": "correct_abstention",
       "retrieved_chunks": [
         {
           "id": "27",

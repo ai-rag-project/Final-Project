@@ -6,6 +6,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from rag_engine import agent
 from rag_engine.agent.rag_agent import RAGAgent
 from rag_engine.evaluation.evaluate_retrieval import (
     load_json,
@@ -39,7 +40,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=EVALUATION_DIR / "generation_results.json",
+        default=None,
+        help=(
+            "Output JSON path. If omitted, the filename is selected "
+            "from the prompt variant."
+        ),
+    )
+    parser.add_argument(
+        "--prompt-variant",
+        choices=("baseline", "improved"),
+        default="baseline",
     )
     parser.add_argument(
         "--chroma-dir",
@@ -103,6 +113,7 @@ def evaluate(
     agent: RAGAgent,
     top_k: int,
     model: str,
+    prompt_variant: str,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     records = []
     answer_f1_scores = []
@@ -124,6 +135,7 @@ def evaluate(
             question["question"],
             documents,
             model=model,
+            prompt_variant=prompt_variant,
         )
 
         is_answerable = bool(question.get("is_answerable"))
@@ -235,11 +247,22 @@ def main() -> None:
         db=database,
     )
 
+    output_path = args.output
+    if output_path is None:
+        if args.prompt_variant == "baseline":
+            output_path = EVALUATION_DIR / "generation_results.json"
+        else:
+            output_path = (
+                EVALUATION_DIR
+                / "generation_results_improved_prompt.json"
+            )
+
     summary, records = evaluate(
         questions,
         agent,
         args.top_k,
         args.model,
+        args.prompt_variant,
     )
 
     result = {
@@ -247,6 +270,7 @@ def main() -> None:
             "questions_file": repository_relative_path(args.questions),
             "chunks_file": repository_relative_path(args.chunks),
             "model": args.model,
+            "prompt_variant": args.prompt_variant,
             "collection": args.collection,
             "top_k": args.top_k,
         },
@@ -264,14 +288,13 @@ def main() -> None:
         "questions": records,
     }
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with args.output.open("w", encoding="utf-8") as file:
+    with output_path.open("w", encoding="utf-8") as file:
         json.dump(result, file, ensure_ascii=False, indent=2)
 
     print(json.dumps(summary, ensure_ascii=False, indent=2))
-    print(f"\nDetailed results saved to: {args.output}")
-
+    print(f"\nDetailed results saved to: {output_path}")
 
 if __name__ == "__main__":
     main()

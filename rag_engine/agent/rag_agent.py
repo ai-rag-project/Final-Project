@@ -132,22 +132,56 @@ class RAGAgent:
 
         return formatted_chunks
 
-    def generate_answer(self, question: str, chunks: List[str], model: str = "qwen2.5:3b") -> str:
+    def generate_answer(
+            self,
+            question: str,
+            chunks: List[str],
+            model: str = "qwen2.5:3b",
+            prompt_variant: str = "baseline",
+    ) -> str:
 
         context = "\n\n".join(chunks)
-        prompt = f"""You are a question-answering assistant. Answer the question using ONLY the information in the context below. Do not use any outside knowledge.
 
-        Rules:
-        - Use only the provided context.
-        - If the context does not contain enough information, return exactly: UNANSWERABLE
-        - Otherwise, return only the shortest answer supported by the context.
-        - Do not include explanations, prefixes, or extra commentary.
+        if prompt_variant == "baseline":
+            prompt = f"""You are a question-answering assistant. Answer the question using ONLY the information in the context below. Do not use any outside knowledge.
 
-        Context:
-        {context}
+            Rules:
+            - Use only the provided context.
+            - If the context does not contain enough information, return exactly: UNANSWERABLE
+            - Otherwise, return only the shortest answer supported by the context.
+            - Do not include explanations, prefixes, or extra commentary.
 
-        Question: {question}
-        Answer:"""
+            Context:
+            {context}
+
+            Question: {question}
+            Answer:"""
+
+        elif prompt_variant == "improved":
+            prompt = f"""You are an evidence-verifying question-answering assistant. Use ONLY the provided context and do not use outside knowledge.
+
+            Before answering, silently verify that the context explicitly supports the complete answer and every essential part of the question.
+
+            Return exactly UNANSWERABLE if:
+            - any essential information is missing;
+            - the context only contains related or partial information;
+            - the question contains a false or unsupported premise;
+            - the context contradicts the question;
+            - entity identity, negation, time, quantity, or comparison details do not match.
+
+            If the answer is fully supported, return only the shortest answer supported by the context.
+            Do not include explanations, prefixes, reasoning, or extra commentary.
+
+            Context:
+            {context}
+
+            Question: {question}
+            Answer:"""
+
+        else:
+            raise ValueError(
+                f"Unsupported prompt variant: {prompt_variant}"
+            )
 
         try:
             with console.status("[dim]Generating answer...[/dim]", spinner="dots"):

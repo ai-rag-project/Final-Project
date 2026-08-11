@@ -229,19 +229,42 @@ This command downloads the original dataset when necessary and regenerates the c
 
 ## Evaluation
 
-Run both evaluators from the repository root:
+Run the evaluators from the repository root.
+
+### Retrieval Evaluation
+
+First, run the retrieval evaluator:
 
 ```bash
 python -m rag_engine.evaluation.evaluate_retrieval
-python -m rag_engine.evaluation.evaluate_generation
 ```
 
 The retrieval evaluator rebuilds a separate ChromaDB evaluation collection, processes the 50 answerable questions, prints the retrieval metrics, and saves the per-question results.
 
-The generation evaluator processes all 100 questions, computes Answer F1 and Hallucination Rate, prints the metric summary, and saves the generated answers together with their retrieved chunks.
+### Generation Evaluation
 
-Generation evaluation requires the local Ollama service and `qwen2.5:3b` model.
+Next, run the generation evaluator. You can choose between two prompt variants, `baseline` and `improved`, to evaluate the effect of strict evidence verification on hallucination rates.
 
+**Baseline prompt:**
+
+```bash
+python -m rag_engine.evaluation.evaluate_generation --prompt-variant baseline
+```
+
+**Improved verification-oriented prompt:**
+
+```bash
+python -m rag_engine.evaluation.evaluate_generation --prompt-variant improved
+```
+
+The generation evaluator processes all 100 questions, computes **Answer F1** and **Hallucination Rate**, and prints the metric summary.
+
+To prevent results from being overwritten, each prompt variant is saved to a separate file:
+
+- `baseline` → `generation_results.json`
+- `improved` → `generation_results_improved_prompt.json`
+
+Generation evaluation requires the local Ollama service with the `qwen2.5:3b` model.
 ## End-to-End Demo
 
 After installing the dependencies and pulling the Ollama model, run:
