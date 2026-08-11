@@ -272,6 +272,62 @@ Expected answer:
 
 An unrelated question with no supporting evidence should return `UNANSWERABLE`, although the evaluation shows that abstention is not yet reliable in every case.
 
+### Quick Demo Examples
+
+The following examples were tested with the recorded baseline configuration:
+`BAAI/bge-base-en-v1.5`, `Top-k = 3`, and `qwen2.5:3b`.
+
+#### Supported question
+
+```text
+How many Vice Presidents are in the Board of Trustees?
+```
+
+Recorded output:
+
+```text
+Fourteen
+```
+
+#### Unsupported question
+
+```text
+Why does unemployment help growth?
+```
+
+Recorded output:
+
+```text
+UNANSWERABLE
+```
+
+Because generation is performed by a local language model, wording may vary
+slightly between runs. The evaluation results also show that abstention is not
+reliable for every unsupported question.
+
+### Advanced Evaluation: Bootstrap Confidence Intervals
+
+To quantify uncertainty in the reported metrics, we used a nonparametric
+percentile bootstrap with 10,000 resamples, a 95% confidence level, and
+a fixed random seed of 42.
+
+| Metric | Sample Size | Point Estimate | 95% Confidence Interval |
+|---|---:|---:|---:|
+| Answer F1 | 50 | 0.6825 | [0.5641, 0.7953] |
+| Hallucination Rate | 50 | 0.4400 | [0.3000, 0.5800] |
+| Evidence Recall@3 | 50 | 0.9800 | [0.9400, 1.0000] |
+
+These intervals estimate uncertainty caused by evaluating on a limited
+sample of questions. They do not measure variation caused by repeated
+language-model generation.
+
+The analysis can be reproduced with:
+
+```bash
+python -m rag_engine.evaluation.bootstrap_confidence_intervals
+```
+The generated results are stored in `rag_engine/evaluation/bootstrap_results.json`.
+
 ## Representative Errors
 
 Manual review identified several recurring failure patterns:
@@ -307,3 +363,7 @@ Representative examples and explanations are included in [`docs/phase2_report.md
 - Eiliya Yavari
 
 Artificial Intelligence and Expert Systems - Spring 1404-1405
+
+git add README.md
+    rag_engine/evaluation/bootstrap_confidence_intervals.py
+    rag_engine/evaluation/bootstrap_results.json
